@@ -1,2 +1,36 @@
-const json=(data,status=200)=>new Response(JSON.stringify(data),{status,headers:{'content-type':'application/json; charset=utf-8','access-control-allow-origin':'*','access-control-allow-methods':'GET,POST,OPTIONS','access-control-allow-headers':'content-type'}});
-export default {async fetch(request,env){const url=new URL(request.url);if(request.method==='OPTIONS')return new Response(null,{headers:{'access-control-allow-origin':'*','access-control-allow-methods':'GET,POST,OPTIONS','access-control-allow-headers':'content-type'}});if(url.pathname==='/api/health')return json({service:'ZYQENT API',status:'starter',note:'Authentication is not enabled yet.'});if(url.pathname.startsWith('/api/'))return json({error:'Endpoint belum diimplementasikan. Selesaikan autentikasi aman, session, pemeriksaan role, validasi, dan rate limiting sebelum produksi.'},501);return json({error:'Not found'},404);}};
+export default {
+  async fetch(request, env) {
+    const url = new URL(request.url);
+
+    if (url.pathname === "/api/health") {
+      return Response.json({
+        success: true,
+        message: "ZYQENT API ONLINE",
+        database: "CONNECTED"
+      });
+    }
+
+    if (url.pathname === "/api/database") {
+      try {
+        const result = await env.DB.prepare(
+          "SELECT name FROM sqlite_master WHERE type = 'table' ORDER BY name"
+        ).all();
+
+        return Response.json({
+          success: true,
+          tables: result.results
+        });
+      } catch (error) {
+        return Response.json({
+          success: false,
+          message: "Database connection failed"
+        }, { status: 500 });
+      }
+    }
+
+    return Response.json({
+      success: false,
+      message: "ZYQENT API endpoint not found"
+    }, { status: 404 });
+  }
+};
