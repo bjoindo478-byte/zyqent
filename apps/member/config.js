@@ -6,7 +6,7 @@ window.ZYQENT_CONFIG = {
   APP_NAME: "ZYQENT",
   APP_VERSION: "1.0.0",
 
-  API_BASE_URL: "",
+ API_BASE_URL: "https://zyqent-api.bjoindo478.workers.dev",
 
   AUTH: {
     GOOGLE_ENABLED: false,
