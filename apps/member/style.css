@@ -1,1 +1,283 @@
-:root{--cyan:#65eaff;--violet:#a78bfa}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 78% 22%,#202b59 0,transparent 42%),#070b18;color:#f7f8ff;font-family:Inter,system-ui,Arial}header{height:76px;padding:0 7vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff18}.logo{font-size:22px;font-weight:900;letter-spacing:4px;color:var(--cyan);text-decoration:none}.logo span{color:white}.status,.eyebrow{font-size:10px;letter-spacing:3px;color:var(--cyan)}main{max-width:1100px;margin:auto;padding:0 26px}.hero{min-height:570px;padding:105px 0 75px;position:relative}.hero h1{font-size:clamp(48px,8vw,88px);line-height:.98;letter-spacing:-5px;margin:22px 0}.hero em{font-style:normal;color:var(--cyan);text-shadow:0 0 28px #65eaff66}.hero p,.panel p,.cards p{color:#aab5d1;line-height:1.8;max-width:470px}.cta,button{display:inline-block;margin-top:20px;padding:14px 20px;border:0;border-radius:9px;color:white;text-decoration:none;font-weight:800;background:linear-gradient(100deg,#167e9a,#5946a8);cursor:pointer}.orb{position:absolute;right:9%;top:130px;width:230px;height:230px;border:1px solid #65eaff88;border-radius:50%;display:grid;place-items:center;box-shadow:0 0 80px #65eaff22,inset 0 0 50px #a78bfa22}.orb span{font-size:85px;font-weight:900;color:var(--cyan);text-shadow:0 0 30px var(--cyan)}.panel{display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:32px;border:1px solid #ffffff24;border-radius:18px;background:#11182bdc}.panel h2{font-size:32px}.form{display:grid;gap:12px}.form label{display:grid;gap:7px;font-size:13px}.form input{padding:13px;background:#070d20;border:1px solid #ffffff30;border-radius:8px;color:white}.form button{margin:0}.form .secondary{background:#202943}.form small{color:#aab5d1}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:25px 0 55px}.cards article{padding:22px;border:1px solid #ffffff20;border-radius:14px;background:#10182b}.cards b{font-size:10px;letter-spacing:2px;color:var(--cyan)}footer{text-align:center;padding:28px 0;border-top:1px solid #ffffff18;color:#7885a5;font-size:12px}@media(max-width:700px){.status{display:none}.hero{padding-top:75px;min-height:520px}.orb{width:160px;height:160px;right:0;top:170px;opacity:.25}.hero h1{letter-spacing:-3px}.panel,.cards{grid-template-columns:1fr}.panel{padding:22px}}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #080b18;
+  --panel: #11182c;
+  --cyan: #42e8ff;
+  --purple: #9270ff;
+  --text: #f4f7ff;
+  --muted: #9ba8c4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.splash-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: splashOut 1s ease 2s forwards;
+}
+
+.splash-logo, .zyqo-avatar {
+  width: 75px;
+  height: 75px;
+  border: 2px solid var(--cyan);
+  border-radius: 22px;
+  display: grid;
+  place-items: center;
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--cyan);
+  box-shadow: 0 0 30px #42e8ff55;
+}
+
+.splash-screen h1 {
+  margin-top: 20px;
+  letter-spacing: 8px;
+}
+
+.splash-screen p {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+
+@keyframes splashOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+.login-page {
+  background:
+    radial-gradient(ellipse at 75% 20%, #38246c55, transparent 40%),
+    radial-gradient(ellipse at 15% 45%, #07556a44, transparent 40%),
+    var(--bg);
+  min-height: 100vh;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 7%;
+  border-bottom: 1px solid #ffffff12;
+}
+
+.brand {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.brand span {
+  color: var(--cyan);
+}
+
+.system-status {
+  color: var(--cyan);
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.hero {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.eyebrow {
+  color: var(--cyan);
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 7vw, 70px);
+  line-height: 1.1;
+  margin: 22px 0;
+}
+
+.hero h1 span {
+  background: linear-gradient(90deg, var(--cyan), var(--purple));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero-content > p {
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 550px;
+  margin: 0 auto 35px;
+}
+
+.login-card {
+  background: #11182cdd;
+  border: 1px solid #ffffff20;
+  border-radius: 22px;
+  width: min(100%, 410px);
+  padding: 30px;
+  margin: auto;
+  box-shadow: 0 20px 70px #0008;
+  backdrop-filter: blur(15px);
+}
+
+.zyqo-avatar {
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+}
+
+.login-card h2 {
+  font-size: 21px;
+}
+
+.login-card > p {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 10px 0 22px;
+}
+
+.login-card label {
+  display: block;
+  text-align: left;
+  font-size: 12px;
+  margin: 16px 0 8px;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #ffffff25;
+  background: #080e20;
+  color: white;
+  outline: none;
+}
+
+.login-card input:focus {
+  border-color: var(--cyan);
+}
+
+.login-button {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ffffff25;
+  background: #202941;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+.login-button.primary {
+  background: linear-gradient(100deg, #087eaa, #7046d8);
+  border: none;
+}
+
+.login-button:hover {
+  filter: brightness(1.2);
+}
+
+.separator {
+  color: var(--muted);
+  font-size: 11px;
+  margin: 20px 0;
+}
+
+.register-text {
+  margin-top: 22px !important;
+}
+
+.register-text a {
+  color: var(--cyan);
+  text-decoration: none;
+}
+
+.login-card .notice {
+  font-size: 10px;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.worlds {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px 7% 70px;
+}
+
+.world-card {
+  padding: 25px;
+  background: linear-gradient(145deg, #17213b, #101426);
+  border: 1px solid #ffffff15;
+  border-radius: 16px;
+}
+
+.world-card span {
+  color: var(--cyan);
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.world-card h3 {
+  margin: 18px 0 10px;
+}
+
+.world-card p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+footer {
+  padding: 25px;
+  text-align: center;
+  border-top: 1px solid #ffffff15;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+@media (max-width: 700px) {
+  .worlds {
+    grid-template-columns: 1fr;
+    padding: 10px 20px 50px;
+  }
+
+  .hero {
+    padding-top: 50px;
+  }
+
+  .login-card {
+    padding: 24px;
+  }
+
+  .system-status {
+    font-size: 9px;
+  }
+}
