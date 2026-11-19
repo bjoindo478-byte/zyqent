@@ -2,7 +2,10 @@ name = "zyqent-api"
 main = "src/index.js"
 compatibility_date = "2026-11-19"
 
+[observability]
+enabled = true
+
 [[d1_databases]]
 binding = "DB"
 database_name = "zyqent-db"
-database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+database_id = "ISI_DATABASE_ID_DARI_CLOUDFLARE"
