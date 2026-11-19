@@ -1,97 +1,161 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080b18">
-  <meta name="description" content="ZYQENT - Ultimate Digital Experience">
+  <meta name="theme-color" content="#070b18">
   <title>ZYQENT — Ultimate Digital Experience</title>
   <link rel="stylesheet" href="style.css">
+  <script src="config.js"></script>
+  <script src="app.js" defer></script>
 </head>
 <body>
+  <div class="background-glow"></div>
 
-  <div class="splash-screen" id="splash">
-    <div class="splash-logo">Z</div>
-    <h1>ZYQENT</h1>
-    <p>ULTIMATE DIGITAL EXPERIENCE</p>
-  </div>
+  <header class="topbar">
+    <a class="brand" href="#">ZYQENT<span>.</span></a>
+    <span class="system-status">● SYSTEM ONLINE</span>
+  </header>
 
-  <main class="login-page">
-    <header class="topbar">
-      <a href="#" class="brand">ZYQENT<span>.</span></a>
-      <span class="system-status">● SYSTEM ONLINE</span>
-    </header>
+  <main>
+    <!-- AUTHENTICATION -->
+    <section id="authView" class="auth-section">
+      <div class="auth-card">
+        <div class="logo-orb">Z</div>
+        <p class="eyebrow">WELCOME TO THE FUTURE</p>
+        <h1>Enter the <span>Digital Universe</span></h1>
+        <p class="subtitle">One ecosystem. Unlimited possibilities.</p>
 
-    <section class="hero">
-      <div class="hero-content">
-        <span class="eyebrow">WELCOME TO THE DIGITAL UNIVERSE</span>
-        <h1>Explore Beyond<br><span>Imagination.</span></h1>
-        <p>
-          Discover a new experience where technology,
-          creativity, entertainment, and knowledge unite.
-        </p>
+        <div id="loginPanel">
+          <h2>Member Login</h2>
+          <form id="loginForm">
+            <label>Email</label>
+            <input id="email" type="email" placeholder="Enter your email" required>
 
-        <div class="login-card">
-          <div class="zyqo-avatar">Z</div>
-          <h2>Welcome to ZYQENT</h2>
-          <p>Sign in to enter your digital world.</p>
+            <label>Password</label>
+            <input id="password" type="password" placeholder="Enter your password" required>
 
-          <button class="login-button" id="googleLogin">
+            <button type="submit" class="primary-btn">SIGN IN</button>
+          </form>
+          <button id="googleLogin" class="secondary-btn" type="button">
             Continue with Google
           </button>
-
-          <div class="separator"><span>OR</span></div>
-
-          <form id="loginForm">
-            <label for="email">Email Address</label>
-            <input id="email" type="email"
-              placeholder="Enter your email" required>
-
-            <label for="password">Password</label>
-            <input id="password" type="password"
-              placeholder="Enter your password" required>
-
-            <button type="submit" class="login-button primary">
-              Sign In
-            </button>
-          </form>
-
-          <p class="register-text">
-            New here? <a href="#" id="registerLink">Create an account</a>
-          </p>
-          <p class="notice" id="notice">
-            Authentication will be connected to the secure API.
+          <p class="switch-text">
+            Don't have an account?
+            <a href="#" id="registerLink">Create an account</a>
           </p>
         </div>
+
+        <div id="registerPanel" class="hidden">
+          <h2>Create Member Account</h2>
+          <form id="registerForm">
+            <label>Display Name</label>
+            <input id="registerName" type="text" placeholder="Your display name" required>
+
+            <label>Email</label>
+            <input id="registerEmail" type="email" placeholder="Your email" required>
+
+            <label>Password</label>
+            <input id="registerPassword" type="password"
+              minlength="12" placeholder="Minimum 12 characters" required>
+
+            <button type="submit" class="primary-btn">CREATE ACCOUNT</button>
+          </form>
+          <p class="switch-text">
+            Already have an account?
+            <a href="#" id="backToLogin">Sign in</a>
+          </p>
+        </div>
+
+        <p id="notice" class="notice" role="status"></p>
       </div>
     </section>
 
-    <section class="worlds">
-      <div class="world-card">
-        <span>01 / UNIVERSE</span>
-        <h3>Digital Universe</h3>
-        <p>Explore your digital world.</p>
+    <!-- MEMBER DASHBOARD -->
+    <section id="dashboardView" class="dashboard hidden">
+      <div class="welcome">
+        <p class="eyebrow">YOUR DIGITAL SPACE</p>
+        <h1>Welcome, <span id="memberName">Member</span></h1>
+        <p class="subtitle">Explore your ZYQENT experience.</p>
       </div>
 
-      <div class="world-card">
-        <span>02 / TECHNOLOGY</span>
-        <h3>Technology Center</h3>
-        <p>Discover innovation and AI.</p>
+      <nav class="dashboard-nav">
+        <button class="nav-btn active" data-page="home">Home</button>
+        <button class="nav-btn" data-page="universe">Digital Universe</button>
+        <button class="nav-btn" data-page="technology">Technology</button>
+        <button class="nav-btn" data-page="world">Interactive World</button>
+        <button class="nav-btn" data-page="profile">My Profile</button>
+      </nav>
+
+      <div id="page-home" class="page-content">
+        <div class="hero-panel">
+          <p class="eyebrow">ZYQENT CORE</p>
+          <h2>Your world. Your experience.</h2>
+          <p>Discover technology, entertainment, learning, and exploration in one ecosystem.</p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span>✦</span>
+            <h3>Digital Universe</h3>
+            <p>Explore your digital universe.</p>
+          </article>
+          <article class="feature-card">
+            <span>⌘</span>
+            <h3>Technology Center</h3>
+            <p>Discover the world of technology.</p>
+          </article>
+          <article class="feature-card">
+            <span>◇</span>
+            <h3>Interactive World</h3>
+            <p>Experience an interactive digital space.</p>
+          </article>
+          <article class="feature-card">
+            <span>◎</span>
+            <h3>ZYQO Companion</h3>
+            <p>Your AI companion experience is coming soon.</p>
+          </article>
+        </div>
       </div>
 
-      <div class="world-card">
-        <span>03 / INTERACTIVE</span>
-        <h3>Interactive World</h3>
-        <p>Experience a connected world.</p>
+      <div id="page-universe" class="page-content hidden">
+        <div class="hero-panel">
+          <p class="eyebrow">EXPLORE</p>
+          <h2>Digital Universe</h2>
+          <p>Your gateway to a connected digital world. More experiences are being developed.</p>
+        </div>
       </div>
+
+      <div id="page-technology" class="page-content hidden">
+        <div class="hero-panel">
+          <p class="eyebrow">INNOVATION</p>
+          <h2>Technology Center</h2>
+          <p>A space for discovering digital tools, technology, and innovation.</p>
+        </div>
+      </div>
+
+      <div id="page-world" class="page-content hidden">
+        <div class="hero-panel">
+          <p class="eyebrow">INTERACTION</p>
+          <h2>Interactive World</h2>
+          <p>Interactive experiences will be added as development continues.</p>
+        </div>
+      </div>
+
+      <div id="page-profile" class="page-content hidden">
+        <div class="hero-panel">
+          <p class="eyebrow">ACCOUNT</p>
+          <h2>My Profile</h2>
+          <p id="profileEmail"></p>
+          <p>Account type: Member</p>
+          <button id="logoutButton" class="secondary-btn">SIGN OUT</button>
+        </div>
+      </div>
+
+      <footer class="footer">
+        Created &amp; Developed by Bayu Pratama — Nganjuk, East Java
+      </footer>
     </section>
-
-    <footer>
-      Created & Developed by Bayu Pratama — Nganjuk, East Java
-    </footer>
   </main>
-
-  <script src="config.js"></script>
-  <script src="app.js"></script>
 </body>
 </html>
