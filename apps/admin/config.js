@@ -1,2 +1,7 @@
-// Ganti setelah Worker API berhasil di-deploy.
-window.ZYQENT_CONFIG = { API_BASE_URL: "https://YOUR-WORKER.YOUR-SUBDOMAIN.workers.dev" };
+window.ZYQENT_ADMIN_CONFIG = {
+  APP_NAME: "ZYQENT ADMIN",
+  APP_VERSION: "1.0.0",
+  API_BASE_URL: "",
+  ACCESS_PROTECTION: "cloudflare-access",
+  AUTHENTICATION_ENABLED: false
+};
