@@ -1,8 +1,0 @@
-name = "zyqent-api"
-main = "src/index.js"
-compatibility_date = "2026-11-19"
-
-[[d1_databases]]
-binding = "DB"
-database_name = "zyqent-db"
-database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
