@@ -3,159 +3,409 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#070b18">
+  <meta name="theme-color" content="#030712">
+
   <title>ZYQENT — Ultimate Digital Experience</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
   <script src="config.js"></script>
   <script src="app.js" defer></script>
 </head>
+
 <body>
+
   <div class="background-glow"></div>
 
+  <div class="hud-decoration hud-top-left">ZYQENT CORE / 01</div>
+  <div class="hud-decoration hud-top-right">DIGITAL SYSTEM</div>
+  <div class="hud-decoration hud-bottom-left">SYSTEM VERSION 2.0</div>
+  <div class="hud-decoration hud-bottom-right">ULTIMATE EXPERIENCE</div>
+
   <header class="topbar">
-    <a class="brand" href="#">ZYQENT<span>.</span></a>
-    <span class="system-status">● SYSTEM ONLINE</span>
+    <a class="brand" href="#">
+      ZY<span>QENT</span>
+    </a>
+
+    <div class="system-status">
+      <span>●</span> SYSTEM ONLINE
+    </div>
   </header>
 
   <main>
-    <!-- AUTHENTICATION -->
+
+    <!-- LOGIN AND REGISTER -->
+
     <section id="authView" class="auth-section">
+
       <div class="auth-card">
+
         <div class="logo-orb">Z</div>
-        <p class="eyebrow">WELCOME TO THE FUTURE</p>
-        <h1>Enter the <span>Digital Universe</span></h1>
-        <p class="subtitle">One ecosystem. Unlimited possibilities.</p>
+
+        <p class="eyebrow">ZYQENT IDENTITY SYSTEM</p>
+
+        <h1>
+          ENTER THE
+          <span>DIGITAL UNIVERSE</span>
+        </h1>
+
+        <p class="subtitle">
+          One Ecosystem. Unlimited Possibilities.
+        </p>
+
+        <div class="auth-line"></div>
+
+        <!-- LOGIN -->
 
         <div id="loginPanel">
-          <h2>Member Login</h2>
+
+          <h2>MEMBER LOGIN</h2>
+
           <form id="loginForm">
-            <label>Email</label>
-            <input id="email" type="email" placeholder="Enter your email" required>
 
-            <label>Password</label>
-            <input id="password" type="password" placeholder="Enter your password" required>
+            <label for="email">EMAIL ADDRESS</label>
+            <input
+              id="email"
+              type="email"
+              placeholder="Enter your email"
+              autocomplete="email"
+              required
+            >
 
-            <button type="submit" class="primary-btn">SIGN IN</button>
+            <label for="password">PASSWORD</label>
+            <input
+              id="password"
+              type="password"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              required
+            >
+
+            <button type="submit" class="primary-btn">
+              INITIALIZE LOGIN
+            </button>
+
           </form>
+
           <button id="googleLogin" class="secondary-btn" type="button">
-            Continue with Google
+            CONTINUE WITH GOOGLE
           </button>
+
           <p class="switch-text">
             Don't have an account?
             <a href="#" id="registerLink">Create an account</a>
           </p>
+
         </div>
 
+        <!-- REGISTER -->
+
         <div id="registerPanel" class="hidden">
-          <h2>Create Member Account</h2>
+
+          <h2>CREATE MEMBER ACCOUNT</h2>
+
           <form id="registerForm">
-            <label>Display Name</label>
-            <input id="registerName" type="text" placeholder="Your display name" required>
 
-            <label>Email</label>
-            <input id="registerEmail" type="email" placeholder="Your email" required>
+            <label for="registerName">DISPLAY NAME</label>
+            <input
+              id="registerName"
+              type="text"
+              placeholder="Your display name"
+              autocomplete="name"
+              required
+            >
 
-            <label>Password</label>
-            <input id="registerPassword" type="password"
-              minlength="12" placeholder="Minimum 12 characters" required>
+            <label for="registerEmail">EMAIL ADDRESS</label>
+            <input
+              id="registerEmail"
+              type="email"
+              placeholder="Your email"
+              autocomplete="email"
+              required
+            >
 
-            <button type="submit" class="primary-btn">CREATE ACCOUNT</button>
+            <label for="registerPassword">PASSWORD</label>
+            <input
+              id="registerPassword"
+              type="password"
+              minlength="12"
+              placeholder="Minimum 12 characters"
+              autocomplete="new-password"
+              required
+            >
+
+            <button type="submit" class="primary-btn">
+              CREATE ACCOUNT
+            </button>
+
           </form>
+
           <p class="switch-text">
             Already have an account?
             <a href="#" id="backToLogin">Sign in</a>
           </p>
+
         </div>
 
         <p id="notice" class="notice" role="status"></p>
+
+        <div class="auth-footer">
+          SECURE MEMBER ACCESS • ZYQENT
+        </div>
+
       </div>
+
     </section>
 
+
     <!-- MEMBER DASHBOARD -->
+
     <section id="dashboardView" class="dashboard hidden">
-      <div class="welcome">
-        <p class="eyebrow">YOUR DIGITAL SPACE</p>
-        <h1>Welcome, <span id="memberName">Member</span></h1>
-        <p class="subtitle">Explore your ZYQENT experience.</p>
+
+      <div class="dashboard-header">
+
+        <div class="welcome">
+          <p class="eyebrow">PERSONAL DIGITAL SPACE</p>
+
+          <h1>
+            WELCOME,
+            <span id="memberName">MEMBER</span>
+          </h1>
+
+          <p class="subtitle">
+            Your digital experience starts here.
+          </p>
+        </div>
+
+        <div class="account-status">
+          <span>●</span> MEMBER ONLINE
+        </div>
+
       </div>
 
+
+      <!-- NAVIGATION -->
+
       <nav class="dashboard-nav">
-        <button class="nav-btn active" data-page="home">Home</button>
-        <button class="nav-btn" data-page="universe">Digital Universe</button>
-        <button class="nav-btn" data-page="technology">Technology</button>
-        <button class="nav-btn" data-page="world">Interactive World</button>
-        <button class="nav-btn" data-page="profile">My Profile</button>
+
+        <button class="nav-btn active" data-page="home">
+          HOME
+        </button>
+
+        <button class="nav-btn" data-page="universe">
+          DIGITAL UNIVERSE
+        </button>
+
+        <button class="nav-btn" data-page="technology">
+          TECHNOLOGY
+        </button>
+
+        <button class="nav-btn" data-page="world">
+          INTERACTIVE WORLD
+        </button>
+
+        <button class="nav-btn" data-page="profile">
+          MY PROFILE
+        </button>
+
       </nav>
 
+
+      <!-- HOME -->
+
       <div id="page-home" class="page-content">
-        <div class="hero-panel">
-          <p class="eyebrow">ZYQENT CORE</p>
-          <h2>Your world. Your experience.</h2>
-          <p>Discover technology, entertainment, learning, and exploration in one ecosystem.</p>
+
+        <section class="hero-panel">
+
+          <p class="eyebrow">ZYQENT CORE ACTIVATED</p>
+
+          <h2>
+            YOUR WORLD.
+            <span>YOUR EXPERIENCE.</span>
+          </h2>
+
+          <p>
+            Discover technology, entertainment, learning,
+            and exploration in one connected ecosystem.
+          </p>
+
+          <div class="hero-system">
+            <span>CORE STATUS: ACTIVE</span>
+            <span>EXPERIENCE ENGINE: READY</span>
+          </div>
+
+        </section>
+
+
+        <!-- ZYQO -->
+
+        <section class="zyqo-panel">
+
+          <div class="zyqo-orb">
+            <div class="zyqo-face">
+              <span class="zyqo-eye"></span>
+              <span class="zyqo-eye"></span>
+              <div class="zyqo-mouth"></div>
+            </div>
+          </div>
+
+          <div class="zyqo-info">
+
+            <p class="eyebrow">ZYQENT AI COMPANION</p>
+
+            <h2>HELLO, I'M ZYQO</h2>
+
+            <p>
+              Your digital companion is preparing
+              for its next evolution.
+            </p>
+
+            <span class="coming-soon">
+              AI SYSTEM — COMING SOON
+            </span>
+
+          </div>
+
+        </section>
+
+
+        <!-- FEATURE GRID -->
+
+        <div class="section-heading">
+          <p class="eyebrow">EXPLORE ECOSYSTEM</p>
+          <h2>DISCOVER ZYQENT</h2>
         </div>
 
         <div class="feature-grid">
+
           <article class="feature-card">
             <span>✦</span>
-            <h3>Digital Universe</h3>
-            <p>Explore your digital universe.</p>
+            <h3>DIGITAL UNIVERSE</h3>
+            <p>
+              Explore your own connected digital universe.
+            </p>
           </article>
+
           <article class="feature-card">
             <span>⌘</span>
-            <h3>Technology Center</h3>
-            <p>Discover the world of technology.</p>
+            <h3>TECHNOLOGY CENTER</h3>
+            <p>
+              Discover digital technology and innovation.
+            </p>
           </article>
+
           <article class="feature-card">
             <span>◇</span>
-            <h3>Interactive World</h3>
-            <p>Experience an interactive digital space.</p>
+            <h3>INTERACTIVE WORLD</h3>
+            <p>
+              Experience an interactive digital environment.
+            </p>
           </article>
+
           <article class="feature-card">
             <span>◎</span>
-            <h3>ZYQO Companion</h3>
-            <p>Your AI companion experience is coming soon.</p>
+            <h3>PERSONAL DIGITAL SPACE</h3>
+            <p>
+              Your personal space inside ZYQENT.
+            </p>
           </article>
+
         </div>
+
       </div>
+
+
+      <!-- DIGITAL UNIVERSE -->
 
       <div id="page-universe" class="page-content hidden">
-        <div class="hero-panel">
-          <p class="eyebrow">EXPLORE</p>
-          <h2>Digital Universe</h2>
-          <p>Your gateway to a connected digital world. More experiences are being developed.</p>
-        </div>
+
+        <section class="hero-panel">
+          <p class="eyebrow">DIMENSIONAL GATEWAY</p>
+          <h2>DIGITAL UNIVERSE</h2>
+          <p>
+            Explore the connected digital universe.
+            Galaxy Map and portal experiences are planned
+            for future development.
+          </p>
+        </section>
+
       </div>
+
+
+      <!-- TECHNOLOGY -->
 
       <div id="page-technology" class="page-content hidden">
-        <div class="hero-panel">
-          <p class="eyebrow">INNOVATION</p>
-          <h2>Technology Center</h2>
-          <p>A space for discovering digital tools, technology, and innovation.</p>
-        </div>
+
+        <section class="hero-panel">
+          <p class="eyebrow">INNOVATION CENTER</p>
+          <h2>TECHNOLOGY CENTER</h2>
+          <p>
+            Discover technology, digital tools,
+            artificial intelligence, and innovation.
+          </p>
+        </section>
+
       </div>
+
+
+      <!-- INTERACTIVE WORLD -->
 
       <div id="page-world" class="page-content hidden">
-        <div class="hero-panel">
-          <p class="eyebrow">INTERACTION</p>
-          <h2>Interactive World</h2>
-          <p>Interactive experiences will be added as development continues.</p>
-        </div>
+
+        <section class="hero-panel">
+          <p class="eyebrow">EXPERIENCE ENGINE</p>
+          <h2>INTERACTIVE WORLD</h2>
+          <p>
+            A new interactive experience is being developed
+            for the ZYQENT ecosystem.
+          </p>
+        </section>
+
       </div>
+
+
+      <!-- PROFILE -->
 
       <div id="page-profile" class="page-content hidden">
-        <div class="hero-panel">
-          <p class="eyebrow">ACCOUNT</p>
-          <h2>My Profile</h2>
+
+        <section class="hero-panel">
+
+          <p class="eyebrow">MEMBER IDENTITY</p>
+
+          <h2>MY PROFILE</h2>
+
           <p id="profileEmail"></p>
-          <p>Account type: Member</p>
-          <button id="logoutButton" class="secondary-btn">SIGN OUT</button>
-        </div>
+
+          <p>ACCOUNT TYPE: MEMBER</p>
+
+          <button id="logoutButton" class="secondary-btn">
+            SIGN OUT
+          </button>
+
+        </section>
+
       </div>
 
+
+      <!-- FOOTER -->
+
       <footer class="footer">
-        Created &amp; Developed by Bayu Pratama — Nganjuk, East Java
+
+        <p>ZYQENT — ULTIMATE DIGITAL EXPERIENCE</p>
+
+        <p>
+          Created &amp; Developed by Bayu Pratama
+          — Nganjuk, East Java
+        </p>
+
       </footer>
+
     </section>
+
   </main>
+
 </body>
 </html>
