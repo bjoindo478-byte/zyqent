@@ -1,1 +1,88 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ZYQENT Admin | Private Console</title><link rel="stylesheet" href="style.css"></head><body><main><div class="symbol">Z</div><div class="eyebrow">RESTRICTED SYSTEM</div><h1>ZYQENT <span>ADMIN</span></h1><p>Private control center · Owner access only</p><section><h2>Administrator Sign In</h2><label>Email<input type="email" placeholder="Owner email"></label><label>Password<input type="password" placeholder="Password"></label><button id="login">Secure Sign In</button><small id="status">Admin authentication and Cloudflare Access must be configured.</small></section><footer>PRIVATE AREA · OWNER ACCESS ONLY</footer></main><script src="config.js"></script><script src="app.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b18">
+
+  <title>ZYQENT Admin — Control Center</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="admin-splash" id="adminSplash">
+    <div class="admin-logo">Z</div>
+    <h1>ZYQENT</h1>
+    <p>ADMIN CONTROL CENTER</p>
+  </div>
+
+  <main class="admin-page">
+
+    <header class="admin-header">
+      <a href="#" class="admin-brand">ZYQENT<span>.</span></a>
+      <span class="private-label">PRIVATE ACCESS</span>
+    </header>
+
+    <section class="admin-login">
+
+      <div class="security-icon">◆</div>
+
+      <span class="eyebrow">RESTRICTED ENVIRONMENT</span>
+
+      <h1>Admin <span>Access</span></h1>
+
+      <p class="description">
+        Welcome to the ZYQENT Control Center.
+        Authorized owner access only.
+      </p>
+
+      <form id="adminLoginForm">
+
+        <label for="adminEmail">Owner Email</label>
+        <input
+          type="email"
+          id="adminEmail"
+          placeholder="Enter owner email"
+          autocomplete="username"
+          required
+        >
+
+        <label for="adminPassword">Password</label>
+        <input
+          type="password"
+          id="adminPassword"
+          placeholder="Enter password"
+          autocomplete="current-password"
+          required
+        >
+
+        <button type="submit">
+          Secure Sign In
+        </button>
+
+      </form>
+
+      <p id="adminNotice" class="notice">
+        Protected administrative environment.
+      </p>
+
+      <div class="security-status">
+        <span>●</span> SECURITY SYSTEM ENABLED
+      </div>
+
+    </section>
+
+    <footer>
+      ZYQENT Administration System<br>
+      Created & Developed by Bayu Pratama
+    </footer>
+
+  </main>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
