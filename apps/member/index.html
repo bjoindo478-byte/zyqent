@@ -1,19 +1,96 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="ZYQENT — Ultimate Digital Experience">
-<title>ZYQENT | Ultimate Digital Experience</title><link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b18">
+  <meta name="description" content="ZYQENT - Ultimate Digital Experience">
+  <title>ZYQENT — Ultimate Digital Experience</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header><a class="logo" href="#">Z<span>YQENT</span></a><span class="status">DIGITAL UNIVERSE · ONLINE</span></header>
-<main>
-<section class="hero"><div class="eyebrow">WELCOME TO A NEW EXPERIENCE</div>
-<h1>Explore Beyond<br><em>Imagination.</em></h1>
-<p>One ecosystem for technology, learning, entertainment, and exploration.</p>
-<a class="cta" href="#member">ENTER ZYQENT</a><div class="orb"><span>Z</span></div></section>
-<section id="member" class="panel"><div><div class="eyebrow">ZYQENT IDENTITY</div><h2>Member Access</h2><p>Public member access. Account services will be connected after secure authentication is implemented.</p></div>
-<div class="form"><label>Email<input type="email" placeholder="nama@email.com" autocomplete="email"></label><label>Password<input type="password" placeholder="Password" autocomplete="current-password"></label><button id="login">Member Login</button><button class="secondary" id="register">Create Member Account</button><small id="message">Authentication belum diaktifkan.</small></div></section>
-<section class="cards"><article><b>01 / TECHNOLOGY</b><h3>Technology Center</h3><p>Discover digital tools and innovation.</p></article><article><b>02 / LEARNING</b><h3>Knowledge Space</h3><p>Explore ideas and new knowledge.</p></article><article><b>03 / INTERACTIVE</b><h3>Interactive World</h3><p>A foundation for immersive experiences.</p></article></section>
-<footer>Created &amp; Developed by Bayu Pratama — Nganjuk, East Java</footer>
-</main><script src="config.js"></script><script src="app.js"></script></body></html>
+
+  <div class="splash-screen" id="splash">
+    <div class="splash-logo">Z</div>
+    <h1>ZYQENT</h1>
+    <p>ULTIMATE DIGITAL EXPERIENCE</p>
+  </div>
+
+  <main class="login-page">
+    <header class="topbar">
+      <a href="#" class="brand">ZYQENT<span>.</span></a>
+      <span class="system-status">● SYSTEM ONLINE</span>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">WELCOME TO THE DIGITAL UNIVERSE</span>
+        <h1>Explore Beyond<br><span>Imagination.</span></h1>
+        <p>
+          Discover a new experience where technology,
+          creativity, entertainment, and knowledge unite.
+        </p>
+
+        <div class="login-card">
+          <div class="zyqo-avatar">Z</div>
+          <h2>Welcome to ZYQENT</h2>
+          <p>Sign in to enter your digital world.</p>
+
+          <button class="login-button" id="googleLogin">
+            Continue with Google
+          </button>
+
+          <div class="separator"><span>OR</span></div>
+
+          <form id="loginForm">
+            <label for="email">Email Address</label>
+            <input id="email" type="email"
+              placeholder="Enter your email" required>
+
+            <label for="password">Password</label>
+            <input id="password" type="password"
+              placeholder="Enter your password" required>
+
+            <button type="submit" class="login-button primary">
+              Sign In
+            </button>
+          </form>
+
+          <p class="register-text">
+            New here? <a href="#" id="registerLink">Create an account</a>
+          </p>
+          <p class="notice" id="notice">
+            Authentication will be connected to the secure API.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="worlds">
+      <div class="world-card">
+        <span>01 / UNIVERSE</span>
+        <h3>Digital Universe</h3>
+        <p>Explore your digital world.</p>
+      </div>
+
+      <div class="world-card">
+        <span>02 / TECHNOLOGY</span>
+        <h3>Technology Center</h3>
+        <p>Discover innovation and AI.</p>
+      </div>
+
+      <div class="world-card">
+        <span>03 / INTERACTIVE</span>
+        <h3>Interactive World</h3>
+        <p>Experience a connected world.</p>
+      </div>
+    </section>
+
+    <footer>
+      Created & Developed by Bayu Pratama — Nganjuk, East Java
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
