@@ -1,0 +1,1 @@
+document.getElementById('login').addEventListener('click',()=>document.getElementById('status').textContent='Login Admin belum aktif. Wajib dilindungi autentikasi server-side dan Cloudflare Access.');
