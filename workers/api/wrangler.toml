@@ -8,4 +8,4 @@ enabled = true
 [[d1_databases]]
 binding = "DB"
 database_name = "zyqent-db"
-database_id = "ISI_DATABASE_ID_DARI_CLOUDFLARE"
+database_id = "3b36de41-5295-4182-96ef-38ac4e2ccbdb"
