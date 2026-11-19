@@ -2,19 +2,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const config = window.ZYQENT_CONFIG || {};
   const API = (config.API_BASE_URL || "").replace(/\/+$/, "");
 
-  const loginForm = document.getElementById("loginForm");
-  const googleLogin = document.getElementById("googleLogin");
-  const registerLink = document.getElementById("registerLink");
+  const authView = document.getElementById("authView");
+  const dashboardView = document.getElementById("dashboardView");
+  const loginPanel = document.getElementById("loginPanel");
+  const registerPanel = document.getElementById("registerPanel");
   const notice = document.getElementById("notice");
 
   function showNotice(message) {
-    if (notice) notice.textContent = message;
+    notice.textContent = message;
   }
 
   async function apiRequest(path, options = {}) {
     if (!API) throw new Error("API URL belum dikonfigurasi.");
 
-    const response = await fetch(`${API}${path}`, {
+    const response = await fetch(API + path, {
       ...options,
       credentials: "include",
       headers: {
@@ -32,18 +33,51 @@ document.addEventListener("DOMContentLoaded", () => {
     return data;
   }
 
-  // Member login
-  if (loginForm) {
-    loginForm.addEventListener("submit", async (event) => {
+  function showDashboard(user) {
+    authView.classList.add("hidden");
+    dashboardView.classList.remove("hidden");
+
+    const name = user.displayName || user.email || "Member";
+
+    document.getElementById("memberName").textContent = name;
+    document.getElementById("profileEmail").textContent =
+      user.email || "";
+
+    showPage("home");
+    window.scrollTo(0, 0);
+  }
+
+  function showLogin() {
+    dashboardView.classList.add("hidden");
+    authView.classList.remove("hidden");
+    loginPanel.classList.remove("hidden");
+    registerPanel.classList.add("hidden");
+    showNotice("");
+  }
+
+  function showPage(page) {
+    document.querySelectorAll(".page-content").forEach(section => {
+      section.classList.add("hidden");
+    });
+
+    const selected = document.getElementById("page-" + page);
+    if (selected) selected.classList.remove("hidden");
+
+    document.querySelectorAll(".nav-btn").forEach(button => {
+      button.classList.toggle(
+        "active",
+        button.dataset.page === page
+      );
+    });
+  }
+
+  document.getElementById("loginForm").addEventListener(
+    "submit",
+    async event => {
       event.preventDefault();
 
-      const email = document.getElementById("email")?.value.trim();
-      const password = document.getElementById("password")?.value;
-
-      if (!email || !password) {
-        showNotice("Please complete all login fields.");
-        return;
-      }
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
 
       showNotice("Signing in...");
 
@@ -53,71 +87,99 @@ document.addEventListener("DOMContentLoaded", () => {
           body: JSON.stringify({ email, password })
         });
 
-        showNotice(`Welcome, ${result.user.displayName || result.user.email}!`);
-        loginForm.reset();
-
-        document.dispatchEvent(
-          new CustomEvent("zyqent:login", { detail: result.user })
-        );
+        showDashboard(result.user);
       } catch (error) {
         showNotice(error.message);
       }
-    });
-  }
+    }
+  );
 
-  // Member registration
-  if (registerLink) {
-    registerLink.addEventListener("click", async (event) => {
+  document.getElementById("registerLink").addEventListener(
+    "click",
+    event => {
+      event.preventDefault();
+      loginPanel.classList.add("hidden");
+      registerPanel.classList.remove("hidden");
+      showNotice("");
+    }
+  );
+
+  document.getElementById("backToLogin").addEventListener(
+    "click",
+    event => {
+      event.preventDefault();
+      showLogin();
+    }
+  );
+
+  document.getElementById("registerForm").addEventListener(
+    "submit",
+    async event => {
       event.preventDefault();
 
-      const email = prompt("Enter your email address:");
-      if (!email) return;
+      const displayName =
+        document.getElementById("registerName").value.trim();
 
-      const displayName = prompt("Enter your display name:") || "";
-      const password = prompt("Create a password (minimum 12 characters):");
+      const email =
+        document.getElementById("registerEmail").value.trim();
 
-      if (!password) return;
+      const password =
+        document.getElementById("registerPassword").value;
+
+      if (password.length < 12) {
+        showNotice("Password must contain at least 12 characters.");
+        return;
+      }
 
       showNotice("Creating your account...");
 
       try {
         const result = await apiRequest("/api/auth/register", {
           method: "POST",
-          body: JSON.stringify({
-            email,
-            displayName,
-            password
-          })
+          body: JSON.stringify({ email, displayName, password })
         });
 
-        showNotice("Your ZYQENT Member account has been created!");
-
-        document.dispatchEvent(
-          new CustomEvent("zyqent:login", { detail: result.user })
-        );
+        showDashboard(result.user);
       } catch (error) {
         showNotice(error.message);
       }
-    });
-  }
+    }
+  );
 
-  // Google login is not connected yet
-  if (googleLogin) {
-    googleLogin.addEventListener("click", () => {
+  document.getElementById("googleLogin").addEventListener(
+    "click",
+    () => {
       showNotice("Google Sign-In is not configured yet.");
-    });
-  }
+    }
+  );
 
-  // Check existing session
+  document.querySelectorAll(".nav-btn").forEach(button => {
+    button.addEventListener("click", () => {
+      showPage(button.dataset.page);
+    });
+  });
+
+  document.getElementById("logoutButton").addEventListener(
+    "click",
+    async () => {
+      try {
+        await apiRequest("/api/auth/logout", {
+          method: "POST"
+        });
+      } catch (error) {
+        console.error("Logout request failed:", error);
+      }
+
+      showLogin();
+    }
+  );
+
   apiRequest("/api/auth/me")
     .then(result => {
-      showNotice(`Welcome back, ${result.user.displayName || result.user.email}!`);
-      document.dispatchEvent(
-        new CustomEvent("zyqent:login", { detail: result.user })
-      );
+      showDashboard(result.user);
     })
     .catch(() => {
-      console.log("No active ZYQENT Member session.");
+      showLogin();
     });
 
   console.log("ZYQENT Member System Initialized");
