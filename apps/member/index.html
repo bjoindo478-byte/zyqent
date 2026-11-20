@@ -1,75 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#030712">
-
+  <meta name="theme-color" content="#050816">
   <title>ZYQENT — Ultimate Digital Experience</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css">
-  <script src="config.js"></script>
-  <script src="app.js" defer></script>
 </head>
-
 <body>
 
-  <div class="background-glow"></div>
+  <!-- HUD -->
+  <div class="hud-decoration">ZYQENT // DIGITAL SPACE</div>
+  <div class="hud-decoration">SYSTEM ONLINE ✦</div>
 
-  <div class="hud-decoration hud-top-left">ZYQENT CORE / 01</div>
-  <div class="hud-decoration hud-top-right">DIGITAL SYSTEM</div>
-  <div class="hud-decoration hud-bottom-left">SYSTEM VERSION 2.0</div>
-  <div class="hud-decoration hud-bottom-right">ULTIMATE EXPERIENCE</div>
-
+  <!-- TOP BAR -->
   <header class="topbar">
-    <a class="brand" href="#">
-      ZY<span>QENT</span>
-    </a>
-
-    <div class="system-status">
-      <span>●</span> SYSTEM ONLINE
+    <div class="brand">
+      ZY<span class="brand-qent">QENT</span><span class="brand-sparkle">✦</span>
     </div>
+    <div class="system-status">SYSTEM ONLINE</div>
   </header>
 
-  <main>
-
-    <!-- LOGIN AND REGISTER -->
-
-    <section id="authView" class="auth-section">
-
+  <!-- AUTHENTICATION -->
+  <main id="authView">
+    <section class="auth-section">
       <div class="auth-card">
 
         <div class="logo-orb">Z</div>
 
-        <p class="eyebrow">ZYQENT IDENTITY SYSTEM</p>
-
-        <h1>
-          ENTER THE
-          <span>DIGITAL UNIVERSE</span>
-        </h1>
-
+        <div class="eyebrow">ULTIMATE DIGITAL EXPERIENCE</div>
+        <h1>WELCOME TO ZYQENT</h1>
         <p class="subtitle">
-          One Ecosystem. Unlimited Possibilities.
+          Enter your digital universe. Explore technology, creativity,
+          and a new interactive experience.
         </p>
 
-        <div class="auth-line"></div>
-
         <!-- LOGIN -->
-
         <div id="loginPanel">
-
-          <h2>MEMBER LOGIN</h2>
-
           <form id="loginForm">
-
             <label for="email">EMAIL ADDRESS</label>
             <input
-              id="email"
               type="email"
+              id="email"
               placeholder="Enter your email"
               autocomplete="email"
               required
@@ -77,51 +49,47 @@
 
             <label for="password">PASSWORD</label>
             <input
-              id="password"
               type="password"
+              id="password"
               placeholder="Enter your password"
               autocomplete="current-password"
               required
             >
 
             <button type="submit" class="primary-btn">
-              INITIALIZE LOGIN
+              SIGN IN TO ZYQENT
             </button>
-
           </form>
 
-          <button id="googleLogin" class="secondary-btn" type="button">
-            CONTINUE WITH GOOGLE
+          <div class="auth-line"></div>
+
+          <button type="button" id="googleLogin" class="google-btn">
+            <span class="google-icon">G</span>
+            <span>Continue with Google</span>
           </button>
 
           <p class="switch-text">
             Don't have an account?
-            <a href="#" id="registerLink">Create an account</a>
+            <a href="#" id="registerLink">Create Account</a>
           </p>
-
         </div>
 
         <!-- REGISTER -->
-
         <div id="registerPanel" class="hidden">
-
-          <h2>CREATE MEMBER ACCOUNT</h2>
-
           <form id="registerForm">
-
             <label for="registerName">DISPLAY NAME</label>
             <input
-              id="registerName"
               type="text"
-              placeholder="Your display name"
+              id="registerName"
+              placeholder="Your name"
               autocomplete="name"
               required
             >
 
             <label for="registerEmail">EMAIL ADDRESS</label>
             <input
-              id="registerEmail"
               type="email"
+              id="registerEmail"
               placeholder="Your email"
               autocomplete="email"
               required
@@ -129,283 +97,262 @@
 
             <label for="registerPassword">PASSWORD</label>
             <input
-              id="registerPassword"
               type="password"
-              minlength="12"
+              id="registerPassword"
               placeholder="Minimum 12 characters"
               autocomplete="new-password"
+              minlength="12"
               required
             >
 
             <button type="submit" class="primary-btn">
-              CREATE ACCOUNT
+              CREATE MEMBER ACCOUNT
             </button>
-
           </form>
 
           <p class="switch-text">
             Already have an account?
-            <a href="#" id="backToLogin">Sign in</a>
+            <a href="#" id="backToLogin">Back to Login</a>
           </p>
-
         </div>
 
-        <p id="notice" class="notice" role="status"></p>
+        <div id="notice" class="notice" role="status" aria-live="polite"></div>
 
         <div class="auth-footer">
-          SECURE MEMBER ACCESS • ZYQENT
+          SECURE DIGITAL ACCESS // ZYQENT CORE
         </div>
 
       </div>
-
     </section>
+  </main>
 
+  <!-- MEMBER DASHBOARD -->
+  <main id="dashboardView" class="hidden">
+    <section class="dashboard">
 
-    <!-- MEMBER DASHBOARD -->
-
-    <section id="dashboardView" class="dashboard hidden">
-
-      <div class="dashboard-header">
-
-        <div class="welcome">
-          <p class="eyebrow">PERSONAL DIGITAL SPACE</p>
-
-          <h1>
-            WELCOME,
-            <span id="memberName">MEMBER</span>
-          </h1>
-
-          <p class="subtitle">
-            Your digital experience starts here.
-          </p>
+      <header class="dashboard-header">
+        <div>
+          <div class="brand dashboard-brand">
+            ZY<span class="brand-qent">QENT</span><span class="brand-sparkle">✦</span>
+          </div>
+          <p class="dashboard-label">MEMBER SPACE</p>
         </div>
 
-        <div class="account-status">
-          <span>●</span> MEMBER ONLINE
-        </div>
-
-      </div>
-
+        <div class="account-status">MEMBER CONNECTED</div>
+      </header>
 
       <!-- NAVIGATION -->
-
       <nav class="dashboard-nav">
-
-        <button class="nav-btn active" data-page="home">
-          HOME
-        </button>
-
-        <button class="nav-btn" data-page="universe">
-          DIGITAL UNIVERSE
-        </button>
-
-        <button class="nav-btn" data-page="technology">
-          TECHNOLOGY
-        </button>
-
-        <button class="nav-btn" data-page="world">
-          INTERACTIVE WORLD
-        </button>
-
-        <button class="nav-btn" data-page="profile">
-          MY PROFILE
-        </button>
-
+        <button class="nav-btn active" data-page="home">HOME</button>
+        <button class="nav-btn" data-page="universe">UNIVERSE</button>
+        <button class="nav-btn" data-page="technology">TECH CENTER</button>
+        <button class="nav-btn" data-page="world">INTERACTIVE WORLD</button>
+        <button class="nav-btn" data-page="profile">PROFILE</button>
       </nav>
 
-
       <!-- HOME -->
-
-      <div id="page-home" class="page-content">
-
-        <section class="hero-panel">
-
-          <p class="eyebrow">ZYQENT CORE ACTIVATED</p>
-
-          <h2>
-            YOUR WORLD.
-            <span>YOUR EXPERIENCE.</span>
-          </h2>
-
+      <section id="page-home" class="page-content">
+        <div class="hero-panel">
+          <div class="eyebrow">YOUR DIGITAL SPACE</div>
+          <h2>WELCOME, <span id="memberName">MEMBER</span></h2>
           <p>
-            Discover technology, entertainment, learning,
-            and exploration in one connected ecosystem.
+            Your journey into the ZYQENT digital universe starts here.
+            Discover, explore, learn, and experience.
           </p>
-
-          <div class="hero-system">
-            <span>CORE STATUS: ACTIVE</span>
-            <span>EXPERIENCE ENGINE: READY</span>
-          </div>
-
-        </section>
-
+        </div>
 
         <!-- ZYQO -->
-
-        <section class="zyqo-panel">
-
+        <div class="zyqo-panel">
           <div class="zyqo-orb">
             <div class="zyqo-face">
               <span class="zyqo-eye"></span>
               <span class="zyqo-eye"></span>
-              <div class="zyqo-mouth"></div>
+              <span class="zyqo-mouth"></span>
             </div>
           </div>
 
           <div class="zyqo-info">
-
-            <p class="eyebrow">ZYQENT AI COMPANION</p>
-
-            <h2>HELLO, I'M ZYQO</h2>
-
+            <div class="eyebrow">ZYQENT AI COMPANION</div>
+            <h3>ZYQO</h3>
             <p>
-              Your digital companion is preparing
-              for its next evolution.
+              Your future digital companion. Ready to become part
+              of your exploration in the ZYQENT universe.
             </p>
-
-            <span class="coming-soon">
-              AI SYSTEM — COMING SOON
-            </span>
-
+            <span class="coming-soon">AI SYSTEM IN DEVELOPMENT</span>
           </div>
+        </div>
 
-        </section>
+        <h3 class="section-heading">EXPLORE THE ECOSYSTEM</h3>
 
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon">✦</div>
+            <h3>Digital Universe</h3>
+            <p>Explore your own digital space and discover new experiences.</p>
+          </article>
 
-        <!-- FEATURE GRID -->
+          <article class="feature-card">
+            <div class="feature-icon">⌘</div>
+            <h3>Technology Center</h3>
+            <p>Discover technology, AI, digital innovation, and creativity.</p>
+          </article>
 
-        <div class="section-heading">
-          <p class="eyebrow">EXPLORE ECOSYSTEM</p>
-          <h2>DISCOVER ZYQENT</h2>
+          <article class="feature-card">
+            <div class="feature-icon">◈</div>
+            <h3>Interactive World</h3>
+            <p>Enter an interactive world built for exploration.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">◎</div>
+            <h3>Personal Space</h3>
+            <p>Your personal member space within the ZYQENT ecosystem.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">⟡</div>
+            <h3>Experience Engine</h3>
+            <p>A new way to experience digital interactions.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">⌬</div>
+            <h3>Digital Gateway</h3>
+            <p>Discover new portals and destinations in the digital universe.</p>
+          </article>
+        </div>
+
+        <div class="hero-system">
+          <div class="eyebrow">ZYQENT CORE</div>
+          <h2>KEEP THE ORIGINAL DESIGN — UPGRADE THE EXPERIENCE.</h2>
+          <p>
+            A hybrid digital ecosystem combining technology,
+            entertainment, learning, and exploration.
+          </p>
+          <span class="coming-soon">MORE EXPERIENCES COMING</span>
+        </div>
+      </section>
+
+      <!-- UNIVERSE -->
+      <section id="page-universe" class="page-content hidden">
+        <div class="hero-panel">
+          <div class="eyebrow">DIMENSION 01</div>
+          <h2>DIGITAL UNIVERSE</h2>
+          <p>Explore the universe of ZYQENT and discover new digital dimensions.</p>
         </div>
 
         <div class="feature-grid">
-
           <article class="feature-card">
-            <span>✦</span>
-            <h3>DIGITAL UNIVERSE</h3>
-            <p>
-              Explore your own connected digital universe.
-            </p>
+            <h3>Galaxy Map</h3>
+            <p>Discover the future digital map of ZYQENT.</p>
+            <span class="coming-soon">COMING SOON</span>
           </article>
 
           <article class="feature-card">
-            <span>⌘</span>
-            <h3>TECHNOLOGY CENTER</h3>
-            <p>
-              Discover digital technology and innovation.
-            </p>
+            <h3>Dimensional Gateway</h3>
+            <p>Discover portals to different digital experiences.</p>
+            <span class="coming-soon">COMING SOON</span>
           </article>
 
           <article class="feature-card">
-            <span>◇</span>
-            <h3>INTERACTIVE WORLD</h3>
-            <p>
-              Experience an interactive digital environment.
-            </p>
+            <h3>Personal Digital Space</h3>
+            <p>A space that will grow with your experience.</p>
+            <span class="coming-soon">COMING SOON</span>
           </article>
-
-          <article class="feature-card">
-            <span>◎</span>
-            <h3>PERSONAL DIGITAL SPACE</h3>
-            <p>
-              Your personal space inside ZYQENT.
-            </p>
-          </article>
-
         </div>
-
-      </div>
-
-
-      <!-- DIGITAL UNIVERSE -->
-
-      <div id="page-universe" class="page-content hidden">
-
-        <section class="hero-panel">
-          <p class="eyebrow">DIMENSIONAL GATEWAY</p>
-          <h2>DIGITAL UNIVERSE</h2>
-          <p>
-            Explore the connected digital universe.
-            Galaxy Map and portal experiences are planned
-            for future development.
-          </p>
-        </section>
-
-      </div>
-
+      </section>
 
       <!-- TECHNOLOGY -->
-
-      <div id="page-technology" class="page-content hidden">
-
-        <section class="hero-panel">
-          <p class="eyebrow">INNOVATION CENTER</p>
+      <section id="page-technology" class="page-content hidden">
+        <div class="hero-panel">
+          <div class="eyebrow">DIMENSION 02</div>
           <h2>TECHNOLOGY CENTER</h2>
-          <p>
-            Discover technology, digital tools,
-            artificial intelligence, and innovation.
-          </p>
-        </section>
+          <p>Technology, AI, creativity, and digital innovation.</p>
+        </div>
 
-      </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>Artificial Intelligence</h3>
+            <p>Discover AI technology and intelligent digital systems.</p>
+            <span class="coming-soon">COMING SOON</span>
+          </article>
 
+          <article class="feature-card">
+            <h3>Creative Studio</h3>
+            <p>Explore digital creativity, design, and visual experiences.</p>
+            <span class="coming-soon">COMING SOON</span>
+          </article>
+
+          <article class="feature-card">
+            <h3>Live System</h3>
+            <p>Future system monitor and digital activity center.</p>
+            <span class="coming-soon">COMING SOON</span>
+          </article>
+        </div>
+      </section>
 
       <!-- INTERACTIVE WORLD -->
-
-      <div id="page-world" class="page-content hidden">
-
-        <section class="hero-panel">
-          <p class="eyebrow">EXPERIENCE ENGINE</p>
+      <section id="page-world" class="page-content hidden">
+        <div class="hero-panel">
+          <div class="eyebrow">DIMENSION 03</div>
           <h2>INTERACTIVE WORLD</h2>
-          <p>
-            A new interactive experience is being developed
-            for the ZYQENT ecosystem.
-          </p>
-        </section>
+          <p>Entertainment, learning, discovery, and interactive experiences.</p>
+        </div>
 
-      </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>Explore</h3>
+            <p>Explore new ideas and digital destinations.</p>
+            <span class="coming-soon">COMING SOON</span>
+          </article>
 
+          <article class="feature-card">
+            <h3>Learning Space</h3>
+            <p>Discover a new interactive way to learn.</p>
+            <span class="coming-soon">COMING SOON</span>
+          </article>
+
+          <article class="feature-card">
+            <h3>Entertainment</h3>
+            <p>Experience entertainment inside the digital ecosystem.</p>
+            <span class="coming-soon">COMING SOON</span>
+          </article>
+        </div>
+      </section>
 
       <!-- PROFILE -->
+      <section id="page-profile" class="page-content hidden">
+        <div class="hero-panel profile-panel">
+          <div class="eyebrow">MEMBER IDENTITY</div>
+          <h2>YOUR PROFILE</h2>
 
-      <div id="page-profile" class="page-content hidden">
+          <div class="profile-info">
+            <div class="profile-avatar">Z</div>
+            <h3 id="memberName">MEMBER</h3>
+            <p id="profileEmail"></p>
+          </div>
 
-        <section class="hero-panel">
-
-          <p class="eyebrow">MEMBER IDENTITY</p>
-
-          <h2>MY PROFILE</h2>
-
-          <p id="profileEmail"></p>
-
-          <p>ACCOUNT TYPE: MEMBER</p>
-
-          <button id="logoutButton" class="secondary-btn">
+          <button type="button" id="logoutButton" class="secondary-btn">
             SIGN OUT
           </button>
-
-        </section>
-
-      </div>
-
-
-      <!-- FOOTER -->
+        </div>
+      </section>
 
       <footer class="footer">
-
-        <p>ZYQENT — ULTIMATE DIGITAL EXPERIENCE</p>
-
-        <p>
-          Created &amp; Developed by Bayu Pratama
-          — Nganjuk, East Java
+        <div class="brand footer-brand">
+          ZY<span class="brand-qent">QENT</span><span class="brand-sparkle">✦</span>
+        </div>
+        <p>ULTIMATE DIGITAL EXPERIENCE</p>
+        <p class="developer-credit">
+          Created &amp; Developed by Bayu Pratama — Nganjuk, East Java
         </p>
-
+        <p class="copyright">© 2026 ZYQENT. ALL RIGHTS RESERVED.</p>
       </footer>
 
     </section>
-
   </main>
 
+  <script src="config.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
