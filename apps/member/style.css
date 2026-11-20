@@ -855,3 +855,265 @@ button:disabled {
     scroll-behavior: auto !important;
   }
 }
+/* ==========================================
+   ZYQENT — MOBILE RESPONSIVE UPGRADE
+   Prototype Mobile UI
+   ========================================== */
+
+@media screen and (max-width: 768px) {
+
+  /* BASE */
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-size: 14px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* HUD DECORATION */
+  .hud-decoration {
+    font-size: 9px;
+    opacity: 0.55;
+    max-width: 90%;
+  }
+
+  /* BRAND / LOGO */
+  .brand {
+    font-size: clamp(20px, 6vw, 28px);
+    letter-spacing: 3px;
+  }
+
+  .brand-qent {
+    color: #00d9ff;
+    text-shadow:
+      0 0 5px rgba(0, 217, 255, 0.8),
+      0 0 14px rgba(0, 217, 255, 0.4);
+  }
+
+  .brand-sparkle {
+    display: inline-block !important;
+    color: #00eaff;
+    text-shadow:
+      0 0 6px #00d9ff,
+      0 0 15px rgba(0, 217, 255, 0.7);
+    animation: sparkleGlow 2s ease-in-out infinite;
+  }
+
+  /* AUTH / LOGIN */
+  #authView {
+    width: 100%;
+    min-height: 100svh;
+    padding: 20px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .auth-section {
+    width: 100%;
+    max-width: 440px;
+    padding: 0;
+  }
+
+  .auth-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 24px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 217, 255, 0.65);
+    background: rgba(5, 12, 25, 0.88);
+    box-shadow:
+      0 0 10px rgba(0, 217, 255, 0.16),
+      0 0 25px rgba(0, 217, 255, 0.12),
+      inset 0 0 12px rgba(0, 217, 255, 0.04);
+    box-sizing: border-box;
+  }
+
+  .auth-card h1 {
+    font-size: clamp(24px, 7vw, 32px);
+  }
+
+  .auth-card input {
+    width: 100%;
+    min-height: 48px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+
+  .primary-btn,
+  .google-btn {
+    width: 100%;
+    min-height: 48px;
+    box-sizing: border-box;
+  }
+
+  .google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    white-space: nowrap;
+    font-size: 14px;
+  }
+
+  /* DASHBOARD */
+  #dashboardView {
+    width: 100%;
+    max-width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+  }
+
+  .dashboard {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .dashboard-header {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* NAVIGATION */
+  .nav-menu {
+    gap: 6px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav-menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-btn {
+    flex: 0 0 auto;
+    min-height: 42px;
+    padding: 10px 13px;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+  /* CONTENT */
+  .page-content {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .hero-panel,
+  .hero-section,
+  .zyqo-panel,
+  .system-panel {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* FEATURE GRID */
+  .feature-grid,
+  .features-grid,
+  .card-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .feature-card,
+  .system-card,
+  .info-card {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  /* PROFILE */
+  .profile-card {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* FOOTER */
+  .developer-credit,
+  .auth-footer {
+    font-size: 10px;
+    text-align: center;
+    line-height: 1.7;
+  }
+
+  /* PREVENT CONTENT OVERFLOW */
+  img,
+  video,
+  canvas,
+  iframe {
+    max-width: 100%;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    max-width: 100%;
+  }
+}
+
+/* ==========================================
+   SMALL PHONE
+   ========================================== */
+
+@media screen and (max-width: 380px) {
+
+  .auth-card {
+    padding: 20px 14px;
+    border-radius: 16px;
+  }
+
+  .brand {
+    letter-spacing: 2px;
+  }
+
+  .nav-btn {
+    padding: 9px 10px;
+    font-size: 10px;
+  }
+
+  .hud-decoration {
+    font-size: 8px;
+  }
+
+}
+
+/* ==========================================
+   MOBILE NEON PERFORMANCE
+   ========================================== */
+
+@media screen and (max-width: 768px) {
+
+  .auth-card,
+  .feature-card,
+  .hero-panel,
+  .zyqo-panel {
+    transition:
+      border-color 0.3s ease,
+      box-shadow 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .auth-card:focus-within {
+    border-color: #00eaff;
+    box-shadow:
+      0 0 12px rgba(0, 217, 255, 0.22),
+      0 0 30px rgba(0, 217, 255, 0.14),
+      inset 0 0 14px rgba(0, 217, 255, 0.05);
+  }
+
+}
+
+/* ==========================================
+   ZYQENT MOBILE END
+   ========================================== */
