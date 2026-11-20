@@ -2,14 +2,14 @@
 
 :root {
   --bg: #050816;
-  --panel: rgba(12, 22, 46, 0.88);
+  --panel: rgba(12, 22, 46, .88);
   --cyan: #00d9ff;
   --blue: #087cff;
   --purple: #8b5cf6;
   --white: #f2f8ff;
   --muted: #91a7c4;
-  --border: rgba(0, 217, 255, 0.2);
-  --glow: 0 0 22px rgba(0, 217, 255, 0.2);
+  --border: rgba(0,217,255,.2);
+  --glow: 0 0 22px rgba(0,217,255,.2);
 }
 
 * {
@@ -26,20 +26,19 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   color: var(--white);
+  font-family: 'Rajdhani', sans-serif;
   background:
     radial-gradient(ellipse at 15% 15%, rgba(0,112,255,.16), transparent 38%),
     radial-gradient(ellipse at 85% 75%, rgba(115,55,255,.12), transparent 40%),
     var(--bg);
-  font-family: 'Rajdhani', sans-serif;
-  position: relative;
 }
 
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  pointer-events: none;
   z-index: 0;
+  pointer-events: none;
   background-image:
     linear-gradient(rgba(0,217,255,.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0,217,255,.035) 1px, transparent 1px);
@@ -50,8 +49,8 @@ body::after {
   content: "";
   position: fixed;
   inset: 0;
-  pointer-events: none;
   z-index: 0;
+  pointer-events: none;
   background: linear-gradient(
     transparent 50%,
     rgba(0,217,255,.025) 51%,
@@ -59,14 +58,6 @@ body::after {
   );
   background-size: 100% 8px;
   opacity: .3;
-}
-
-.topbar,
-main,
-#authView,
-#dashboardView {
-  position: relative;
-  z-index: 1;
 }
 
 button,
@@ -87,9 +78,14 @@ a {
   display: none !important;
 }
 
-/* =========================
-   ZYQENT LOGO
-========================= */
+#authView,
+#dashboardView,
+.topbar {
+  position: relative;
+  z-index: 1;
+}
+
+/* LOGO */
 
 .brand {
   display: inline-flex;
@@ -101,22 +97,17 @@ a {
   color: white;
 }
 
-.brand span:not(.brand-sparkle) {
+.brand-qent {
   color: var(--cyan);
-  text-shadow:
-    0 0 7px rgba(0,217,255,.8),
-    0 0 18px rgba(0,140,255,.6);
+  text-shadow: 0 0 7px rgba(0,217,255,.8), 0 0 18px rgba(0,140,255,.6);
 }
 
-.brand .brand-sparkle {
+.brand-sparkle {
   color: #00eaff;
   font-size: .72em;
   margin-left: 5px;
   display: inline-block;
-  text-shadow:
-    0 0 7px #00eaff,
-    0 0 16px #008cff,
-    0 0 28px #008cff;
+  text-shadow: 0 0 7px #00eaff, 0 0 16px #008cff, 0 0 28px #008cff;
   animation: sparkleGlow 2s ease-in-out infinite;
 }
 
@@ -131,18 +122,15 @@ a {
   }
 }
 
-/* =========================
-   TOPBAR
-========================= */
+/* TOPBAR */
 
 .topbar {
-  width: 100%;
   min-height: 76px;
   padding: 15px 6%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 15px;
   border-bottom: 1px solid var(--border);
   background: rgba(5,10,27,.85);
   backdrop-filter: blur(18px);
@@ -170,9 +158,7 @@ a {
   box-shadow: 0 0 10px #00e89b;
 }
 
-/* =========================
-   HUD
-========================= */
+/* HUD */
 
 .hud-decoration {
   position: fixed;
@@ -194,9 +180,7 @@ a {
   bottom: 25px;
 }
 
-/* =========================
-   LOGIN / REGISTER
-========================= */
+/* LOGIN */
 
 .auth-section {
   min-height: calc(100vh - 76px);
@@ -204,24 +188,16 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
 }
 
 .auth-card {
   width: 100%;
   max-width: 420px;
-  margin: auto;
   padding: 34px 30px;
   border: 1px solid rgba(0,217,255,.3);
   border-radius: 18px;
-  background: linear-gradient(
-    145deg,
-    rgba(15,30,60,.96),
-    rgba(6,13,32,.97)
-  );
-  box-shadow:
-    0 0 35px rgba(0,140,255,.12),
-    inset 0 0 25px rgba(0,217,255,.035);
+  background: linear-gradient(145deg, rgba(15,30,60,.96), rgba(6,13,32,.97));
+  box-shadow: 0 0 35px rgba(0,140,255,.12), inset 0 0 25px rgba(0,217,255,.035);
   backdrop-filter: blur(20px);
   position: relative;
   overflow: hidden;
@@ -234,7 +210,7 @@ a {
   left: 12%;
   width: 76%;
   height: 2px;
-  background: linear-gradient(90, transparent, var(--cyan), transparent);
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
   box-shadow: 0 0 15px var(--cyan);
 }
 
@@ -269,9 +245,10 @@ a {
   margin-bottom: 12px;
   color: white;
   font-family: 'Orbitron', sans-serif;
-  font-size: 24px;
+  font-size: 23px;
   text-align: center;
   letter-spacing: 1px;
+  line-height: 1.5;
 }
 
 .subtitle {
@@ -323,19 +300,25 @@ input:focus {
 /* BUTTONS */
 
 .primary-btn,
-.secondary-btn {
+.secondary-btn,
+.google-btn {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   min-height: 48px;
-  padding: 12px 18px;
+  padding: 12px 16px;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
+  box-sizing: border-box;
   border-radius: 9px;
   font-family: 'Orbitron', sans-serif;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 1px;
-  box-sizing: border-box;
+  line-height: 1.5;
+  text-align: center;
   transition: .25s ease;
 }
 
@@ -357,31 +340,29 @@ input:focus {
   color: var(--cyan);
 }
 
-.secondary-btn:hover {
-  background: rgba(0,217,255,.14);
+.secondary-btn:hover,
+.google-btn:hover {
+  background: rgba(0,217,255,.12);
+  border-color: var(--cyan);
 }
 
-/* GOOGLE BUTTON FIX */
+/* GOOGLE BUTTON */
 
-#googleLogin,
-#googleLoginButton,
 .google-btn {
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 12px 14px;
   white-space: normal;
   overflow-wrap: anywhere;
-  text-align: center;
-  box-sizing: border-box;
-  border-radius: 9px;
-  font-size: 12px;
-  line-height: 1.4;
+  border: 1px solid rgba(0,217,255,.35);
+  background: rgba(0,217,255,.05);
+  color: var(--white);
+}
+
+.google-icon {
+  flex: 0 0 20px;
+  font-family: Arial, sans-serif;
+  font-size: 19px;
+  font-weight: bold;
+  color: #4285f4;
+  text-shadow: 1px 1px 2px rgba(255,255,255,.15);
 }
 
 button:disabled {
@@ -411,8 +392,8 @@ button:disabled {
 }
 
 .auth-line {
-  height: 1px;
   width: 100%;
+  height: 1px;
   margin: 20px 0;
   background: linear-gradient(90deg, transparent, var(--cyan), transparent);
   opacity: .5;
@@ -427,9 +408,7 @@ button:disabled {
   letter-spacing: 1px;
 }
 
-/* =========================
-   DASHBOARD
-========================= */
+/* DASHBOARD */
 
 .dashboard {
   width: 100%;
@@ -447,6 +426,16 @@ button:disabled {
   flex-wrap: wrap;
 }
 
+.dashboard-brand {
+  margin-bottom: 5px;
+}
+
+.dashboard-label {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
 .welcome {
   margin-bottom: 8px;
   font-family: 'Orbitron', sans-serif;
@@ -456,6 +445,8 @@ button:disabled {
 .welcome span {
   color: var(--cyan);
 }
+
+/* NAVIGATION */
 
 .dashboard-nav {
   display: flex;
@@ -490,7 +481,7 @@ button:disabled {
   color: var(--cyan);
 }
 
-/* PAGE */
+/* CONTENT */
 
 .page-content {
   animation: pageEnter .4s ease;
@@ -513,9 +504,7 @@ button:disabled {
   margin-bottom: 25px;
   border: 1px solid var(--border);
   border-radius: 15px;
-  background:
-    radial-gradient(circle at 90% 20%, rgba(0,217,255,.1), transparent 35%),
-    var(--panel);
+  background: radial-gradient(circle at 90% 20%, rgba(0,217,255,.1), transparent 35%), var(--panel);
   box-shadow: var(--glow);
 }
 
@@ -524,6 +513,7 @@ button:disabled {
   margin-bottom: 12px;
   font-family: 'Orbitron', sans-serif;
   font-size: 22px;
+  line-height: 1.5;
 }
 
 .hero-panel p,
@@ -532,7 +522,7 @@ button:disabled {
   line-height: 1.7;
 }
 
-/* FEATURE GRID */
+/* FEATURE CARDS */
 
 .section-heading {
   margin: 28px 0 17px;
@@ -544,11 +534,12 @@ button:disabled {
 
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0,1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 17px;
 }
 
 .feature-card {
+  min-width: 0;
   min-height: 150px;
   padding: 23px;
   border: 1px solid rgba(0,217,255,.17);
@@ -561,6 +552,12 @@ button:disabled {
   transform: translateY(-5px);
   border-color: var(--cyan);
   box-shadow: 0 8px 28px rgba(0,217,255,.1);
+}
+
+.feature-icon {
+  margin-bottom: 15px;
+  color: var(--cyan);
+  font-size: 23px;
 }
 
 .feature-card h3 {
@@ -586,11 +583,7 @@ button:disabled {
   margin: 25px 0;
   border: 1px solid rgba(0,217,255,.25);
   border-radius: 16px;
-  background: linear-gradient(
-    110deg,
-    rgba(10,30,60,.92),
-    rgba(24,16,55,.85)
-  );
+  background: linear-gradient(110deg, rgba(10,30,60,.92), rgba(24,16,55,.85));
   box-shadow: var(--glow);
 }
 
@@ -604,9 +597,7 @@ button:disabled {
   border: 2px solid rgba(0,217,255,.65);
   border-radius: 50%;
   background: radial-gradient(circle, #294b68, #09152b 70%);
-  box-shadow:
-    0 0 20px rgba(0,217,255,.35),
-    inset 0 0 20px rgba(0,217,255,.15);
+  box-shadow: 0 0 20px rgba(0,217,255,.35), inset 0 0 20px rgba(0,217,255,.15);
 }
 
 .zyqo-face {
@@ -657,6 +648,11 @@ button:disabled {
   }
 }
 
+.zyqo-info {
+  flex: 1;
+  min-width: 0;
+}
+
 .zyqo-panel h3 {
   margin-bottom: 8px;
   color: var(--cyan);
@@ -686,9 +682,42 @@ button:disabled {
 
 /* PROFILE */
 
+.profile-panel {
+  max-width: 650px;
+}
+
+.profile-info {
+  margin-top: 25px;
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(2,9,25,.55);
+}
+
+.profile-info h3 {
+  margin: 12px 0 8px;
+  font-family: 'Orbitron', sans-serif;
+  overflow-wrap: anywhere;
+}
+
 #profileEmail {
   color: var(--muted);
   overflow-wrap: anywhere;
+}
+
+.profile-avatar {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--cyan);
+  border-radius: 50%;
+  background: rgba(0,217,255,.1);
+  color: var(--cyan);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 22px;
+  box-shadow: var(--glow);
 }
 
 #logoutButton {
@@ -707,8 +736,18 @@ button:disabled {
   letter-spacing: 1px;
 }
 
-.footer span {
-  color: var(--cyan);
+.footer-brand {
+  margin-bottom: 12px;
+}
+
+.developer-credit {
+  margin-top: 12px;
+  color: var(--muted);
+}
+
+.copyright {
+  margin-top: 8px;
+  font-size: 10px;
 }
 
 /* SCROLLBAR */
@@ -735,7 +774,7 @@ button:disabled {
 
 @media (max-width: 800px) {
   .feature-grid {
-    grid-template-columns: repeat(2, minmax(0,1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .dashboard {
@@ -763,6 +802,11 @@ button:disabled {
 
   .auth-card {
     padding: 28px 20px;
+  }
+
+  .auth-card h1,
+  .auth-card h2 {
+    font-size: 20px;
   }
 
   .feature-grid {
@@ -795,6 +839,11 @@ button:disabled {
   .hud-decoration {
     display: none;
   }
+
+  .google-btn {
+    font-size: 11px;
+    letter-spacing: .5px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -803,5 +852,6 @@ button:disabled {
   *::after {
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
   }
 }
