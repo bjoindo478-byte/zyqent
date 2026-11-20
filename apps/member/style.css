@@ -2,7 +2,7 @@
 
 :root {
   --bg: #050816;
-  --panel: rgba(12, 22, 46, .88);
+  --panel: rgba(12,22,46,.88);
   --cyan: #00d9ff;
   --blue: #087cff;
   --purple: #8b5cf6;
@@ -24,6 +24,7 @@ html {
 
 body {
   min-height: 100vh;
+  width: 100%;
   overflow-x: hidden;
   color: var(--white);
   font-family: 'Rajdhani', sans-serif;
@@ -60,8 +61,7 @@ body::after {
   opacity: .3;
 }
 
-button,
-input {
+button, input {
   font: inherit;
 }
 
@@ -85,7 +85,7 @@ a {
   z-index: 1;
 }
 
-/* LOGO */
+/* BRAND */
 
 .brand {
   display: inline-flex;
@@ -180,7 +180,7 @@ a {
   bottom: 25px;
 }
 
-/* LOGIN */
+/* AUTH */
 
 .auth-section {
   min-height: calc(100vh - 76px);
@@ -259,7 +259,7 @@ a {
   line-height: 1.6;
 }
 
-/* FORM */
+/* FORMS */
 
 form {
   display: flex;
@@ -346,8 +346,6 @@ input:focus {
   border-color: var(--cyan);
 }
 
-/* GOOGLE BUTTON */
-
 .google-btn {
   white-space: normal;
   overflow-wrap: anywhere;
@@ -362,7 +360,6 @@ input:focus {
   font-size: 19px;
   font-weight: bold;
   color: #4285f4;
-  text-shadow: 1px 1px 2px rgba(255,255,255,.15);
 }
 
 button:disabled {
@@ -436,16 +433,6 @@ button:disabled {
   letter-spacing: 2px;
 }
 
-.welcome {
-  margin-bottom: 8px;
-  font-family: 'Orbitron', sans-serif;
-  font-size: clamp(20px, 4vw, 30px);
-}
-
-.welcome span {
-  color: var(--cyan);
-}
-
 /* NAVIGATION */
 
 .dashboard-nav {
@@ -458,6 +445,12 @@ button:disabled {
   border-radius: 12px;
   background: rgba(8,17,39,.8);
   overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.dashboard-nav::-webkit-scrollbar {
+  display: none;
 }
 
 .nav-btn {
@@ -472,6 +465,7 @@ button:disabled {
   font-size: 10px;
   letter-spacing: 1px;
   transition: .25s ease;
+  white-space: nowrap;
 }
 
 .nav-btn:hover,
@@ -481,7 +475,7 @@ button:disabled {
   color: var(--cyan);
 }
 
-/* CONTENT */
+/* PAGE CONTENT */
 
 .page-content {
   animation: pageEnter .4s ease;
@@ -504,7 +498,9 @@ button:disabled {
   margin-bottom: 25px;
   border: 1px solid var(--border);
   border-radius: 15px;
-  background: radial-gradient(circle at 90% 20%, rgba(0,217,255,.1), transparent 35%), var(--panel);
+  background:
+    radial-gradient(circle at 90% 20%, rgba(0,217,255,.1), transparent 35%),
+    var(--panel);
   box-shadow: var(--glow);
 }
 
@@ -514,12 +510,18 @@ button:disabled {
   font-family: 'Orbitron', sans-serif;
   font-size: 22px;
   line-height: 1.5;
+  overflow-wrap: anywhere;
 }
 
 .hero-panel p,
 .hero-system p {
   color: var(--muted);
   line-height: 1.7;
+}
+
+.hero-panel h2 span {
+  color: var(--cyan);
+  overflow-wrap: anywhere;
 }
 
 /* FEATURE CARDS */
@@ -573,7 +575,7 @@ button:disabled {
   line-height: 1.5;
 }
 
-/* ZYQO */
+/* HOME ZYQO CARD */
 
 .zyqo-panel {
   display: flex;
@@ -665,7 +667,7 @@ button:disabled {
   line-height: 1.6;
 }
 
-/* COMING SOON */
+/* STATUS LABEL */
 
 .coming-soon {
   display: inline-block;
@@ -750,6 +752,321 @@ button:disabled {
   font-size: 10px;
 }
 
+/* =====================================
+   ZYQO FLOATING COMPANION
+===================================== */
+
+.zyqo-companion {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9999;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.zyqo-toggle {
+  position: relative;
+  width: 76px;
+  min-height: 82px;
+  padding: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  border: 1px solid rgba(0,217,255,.75);
+  border-radius: 19px;
+  background: rgba(5,16,38,.94);
+  color: white;
+  box-shadow: 0 0 16px rgba(0,217,255,.25), inset 0 0 15px rgba(0,217,255,.08);
+  transition: .25s ease;
+}
+
+.zyqo-toggle:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 26px rgba(0,217,255,.45);
+}
+
+.zyqo-toggle-orb {
+  position: relative;
+  width: 40px;
+  height: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #a5f5ff;
+  border-radius: 13px;
+  background: linear-gradient(145deg, #153c5a, #071425);
+  box-shadow: 0 0 12px rgba(0,217,255,.4);
+}
+
+.zyqo-toggle-eyes {
+  display: flex;
+  gap: 10px;
+}
+
+.zyqo-toggle-eyes i {
+  width: 5px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 7px var(--cyan);
+}
+
+.zyqo-toggle-mouth {
+  width: 9px;
+  height: 3px;
+  margin-top: 4px;
+  border-radius: 8px;
+  background: var(--cyan);
+}
+
+.zyqo-toggle-label {
+  color: var(--cyan);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.zyqo-online-dot,
+.zyqo-status-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #00e89b;
+  box-shadow: 0 0 9px #00e89b;
+}
+
+.zyqo-online-dot {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+}
+
+/* CHAT PANEL */
+
+.zyqo-chat-panel {
+  position: absolute;
+  right: 0;
+  bottom: 96px;
+  width: 350px;
+  max-width: calc(100vw - 30px);
+  height: 480px;
+  max-height: min(70vh, 600px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(0,217,255,.55);
+  border-radius: 18px;
+  background: linear-gradient(155deg, rgba(10,25,52,.98), rgba(5,10,27,.99));
+  box-shadow:
+    0 0 18px rgba(0,217,255,.2),
+    0 0 45px rgba(0,100,255,.13),
+    inset 0 0 20px rgba(0,217,255,.035);
+  animation: zyqoAppear .22s ease;
+}
+
+@keyframes zyqoAppear {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.zyqo-chat-header {
+  min-height: 68px;
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  background: rgba(0,217,255,.055);
+}
+
+.zyqo-chat-identity {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.zyqo-mini-avatar {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--cyan);
+  border-radius: 12px;
+  background: linear-gradient(145deg, #153c5a, #071425);
+  color: var(--cyan);
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  box-shadow: 0 0 12px rgba(0,217,255,.2);
+}
+
+.zyqo-chat-identity h3 {
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.zyqo-chat-identity p {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.zyqo-status-dot {
+  width: 6px;
+  height: 6px;
+  margin-right: 4px;
+}
+
+.zyqo-close {
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(0,217,255,.25);
+  border-radius: 9px;
+  background: rgba(0,217,255,.06);
+  color: var(--cyan);
+  font-size: 23px;
+  line-height: 1;
+}
+
+.zyqo-close:hover {
+  border-color: var(--cyan);
+  background: rgba(0,217,255,.15);
+}
+
+/* CHAT MESSAGES */
+
+.zyqo-chat-messages {
+  flex: 1;
+  min-height: 0;
+  padding: 16px 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.zyqo-message {
+  width: fit-content;
+  max-width: 88%;
+  padding: 10px 12px;
+  border: 1px solid rgba(0,217,255,.17);
+  border-radius: 12px;
+  background: rgba(0,217,255,.055);
+  overflow-wrap: anywhere;
+}
+
+.zyqo-message p {
+  color: #d8eaff;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.message-tag {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--cyan);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+}
+
+.user-message {
+  align-self: flex-end;
+  border-color: rgba(139,92,246,.35);
+  background: rgba(139,92,246,.12);
+}
+
+.user-message .message-tag {
+  color: #c6aaff;
+}
+
+.bot-message {
+  align-self: flex-start;
+}
+
+/* QUICK ACTIONS */
+
+.zyqo-quick-actions {
+  padding: 9px 11px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  border-top: 1px solid rgba(0,217,255,.1);
+}
+
+.zyqo-quick-actions button {
+  padding: 7px 10px;
+  border: 1px solid rgba(0,217,255,.3);
+  border-radius: 20px;
+  background: rgba(0,217,255,.06);
+  color: var(--cyan);
+  font-size: 11px;
+  transition: .2s ease;
+}
+
+.zyqo-quick-actions button:hover {
+  background: rgba(0,217,255,.16);
+  border-color: var(--cyan);
+}
+
+/* CHAT INPUT */
+
+.zyqo-chat-form {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  border-top: 1px solid var(--border);
+  background: rgba(2,9,25,.7);
+}
+
+.zyqo-chat-form input {
+  flex: 1;
+  min-width: 0;
+  min-height: 42px;
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.zyqo-chat-form button {
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--cyan);
+  border-radius: 10px;
+  background: linear-gradient(135deg, #087cff, #00c9e9);
+  color: #03101d;
+  font-size: 19px;
+  font-weight: bold;
+  box-shadow: 0 0 12px rgba(0,217,255,.2);
+}
+
+.zyqo-chat-footer {
+  padding: 7px;
+  color: #617d9d;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 8px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
 /* SCROLLBAR */
 
 ::-webkit-scrollbar {
@@ -770,7 +1087,7 @@ button:disabled {
   background: var(--cyan);
 }
 
-/* RESPONSIVE */
+/* TABLET */
 
 @media (max-width: 800px) {
   .feature-grid {
@@ -785,6 +1102,8 @@ button:disabled {
     padding: 14px 4%;
   }
 }
+
+/* MOBILE */
 
 @media (max-width: 560px) {
   .brand {
@@ -811,10 +1130,6 @@ button:disabled {
 
   .feature-grid {
     grid-template-columns: 1fr;
-  }
-
-  .dashboard-nav {
-    justify-content: flex-start;
   }
 
   .nav-btn {
@@ -844,230 +1159,30 @@ button:disabled {
     font-size: 11px;
     letter-spacing: .5px;
   }
-}
 
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: .01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-  }
-}
-/* ==========================================
-   ZYQENT — MOBILE RESPONSIVE UPGRADE
-   Prototype Mobile UI
-   ========================================== */
-
-@media screen and (max-width: 768px) {
-
-  /* BASE */
-  html, body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
+  .zyqo-companion {
+    right: 13px;
+    bottom: 14px;
   }
 
-  body {
-    font-size: 14px;
-    -webkit-text-size-adjust: 100%;
+  .zyqo-chat-panel {
+    position: fixed;
+    right: 12px;
+    bottom: 108px;
+    width: min(370px, calc(100vw - 24px));
+    height: min(490px, 68vh);
+    max-height: calc(100dvh - 135px);
   }
 
-  /* HUD DECORATION */
-  .hud-decoration {
-    font-size: 9px;
-    opacity: 0.55;
-    max-width: 90%;
-  }
-
-  /* BRAND / LOGO */
-  .brand {
-    font-size: clamp(20px, 6vw, 28px);
-    letter-spacing: 3px;
-  }
-
-  .brand-qent {
-    color: #00d9ff;
-    text-shadow:
-      0 0 5px rgba(0, 217, 255, 0.8),
-      0 0 14px rgba(0, 217, 255, 0.4);
-  }
-
-  .brand-sparkle {
-    display: inline-block !important;
-    color: #00eaff;
-    text-shadow:
-      0 0 6px #00d9ff,
-      0 0 15px rgba(0, 217, 255, 0.7);
-    animation: sparkleGlow 2s ease-in-out infinite;
-  }
-
-  /* AUTH / LOGIN */
-  #authView {
-    width: 100%;
-    min-height: 100svh;
-    padding: 20px 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .auth-section {
-    width: 100%;
-    max-width: 440px;
-    padding: 0;
-  }
-
-  .auth-card {
-    width: 100%;
-    max-width: 100%;
-    padding: 24px 18px;
-    border-radius: 20px;
-    border: 1px solid rgba(0, 217, 255, 0.65);
-    background: rgba(5, 12, 25, 0.88);
-    box-shadow:
-      0 0 10px rgba(0, 217, 255, 0.16),
-      0 0 25px rgba(0, 217, 255, 0.12),
-      inset 0 0 12px rgba(0, 217, 255, 0.04);
-    box-sizing: border-box;
-  }
-
-  .auth-card h1 {
-    font-size: clamp(24px, 7vw, 32px);
-  }
-
-  .auth-card input {
-    width: 100%;
-    min-height: 48px;
-    font-size: 16px;
-    box-sizing: border-box;
-  }
-
-  .primary-btn,
-  .google-btn {
-    width: 100%;
-    min-height: 48px;
-    box-sizing: border-box;
-  }
-
-  .google-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    white-space: nowrap;
-    font-size: 14px;
-  }
-
-  /* DASHBOARD */
-  #dashboardView {
-    width: 100%;
-    max-width: 100%;
-    padding: 12px;
-    box-sizing: border-box;
-  }
-
-  .dashboard {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    box-sizing: border-box;
-  }
-
-  .dashboard-header {
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  /* NAVIGATION */
-  .nav-menu {
-    gap: 6px;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .nav-menu::-webkit-scrollbar {
-    display: none;
-  }
-
-  .nav-btn {
-    flex: 0 0 auto;
-    min-height: 42px;
-    padding: 10px 13px;
-    font-size: 11px;
-    white-space: nowrap;
-  }
-
-  /* CONTENT */
-  .page-content {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-
-  .hero-panel,
-  .hero-section,
-  .zyqo-panel,
-  .system-panel {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-
-  /* FEATURE GRID */
-  .feature-grid,
-  .features-grid,
-  .card-grid {
-    grid-template-columns: 1fr !important;
-  }
-
-  .feature-card,
-  .system-card,
-  .info-card {
-    width: 100%;
-    min-width: 0;
-    box-sizing: border-box;
-  }
-
-  /* PROFILE */
-  .profile-card {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-
-  /* FOOTER */
-  .developer-credit,
-  .auth-footer {
-    font-size: 10px;
-    text-align: center;
-    line-height: 1.7;
-  }
-
-  /* PREVENT CONTENT OVERFLOW */
-  img,
-  video,
-  canvas,
-  iframe {
-    max-width: 100%;
-  }
-
-  input,
-  button,
-  textarea,
-  select {
-    max-width: 100%;
+  .zyqo-toggle {
+    width: 68px;
+    min-height: 74px;
   }
 }
 
-/* ==========================================
-   SMALL PHONE
-   ========================================== */
+/* SMALL PHONE */
 
-@media screen and (max-width: 380px) {
-
+@media (max-width: 380px) {
   .auth-card {
     padding: 20px 14px;
     border-radius: 16px;
@@ -1086,34 +1201,21 @@ button:disabled {
     font-size: 8px;
   }
 
+  .zyqo-chat-panel {
+    right: 8px;
+    width: calc(100vw - 16px);
+  }
 }
 
-/* ==========================================
-   MOBILE NEON PERFORMANCE
-   ========================================== */
+/* ACCESSIBILITY */
 
-@media screen and (max-width: 768px) {
-
-  .auth-card,
-  .feature-card,
-  .hero-panel,
-  .zyqo-panel {
-    transition:
-      border-color 0.3s ease,
-      box-shadow 0.3s ease,
-      transform 0.3s ease;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
   }
-
-  .auth-card:focus-within {
-    border-color: #00eaff;
-    box-shadow:
-      0 0 12px rgba(0, 217, 255, 0.22),
-      0 0 30px rgba(0, 217, 255, 0.14),
-      inset 0 0 14px rgba(0, 217, 255, 0.05);
-  }
-
 }
-
-/* ==========================================
-   ZYQENT MOBILE END
-   ========================================== */
