@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const config = window.ZYQENT_CONFIG || {};
-  const API = (config.API_BASE_URL || "").replace(/\/+$/, "");
+  const API = (config.API_BASE_URL || "https://zyqent-api.bjoindo478.workers.dev/").replace(/\/+$/, "");
 
   const $ = id => document.getElementById(id);
 
