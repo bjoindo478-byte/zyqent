@@ -4,16 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#050816">
+  <meta name="description" content="ZYQENT — Ultimate Digital Experience">
   <title>ZYQENT — Ultimate Digital Experience</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- HUD -->
   <div class="hud-decoration">ZYQENT // DIGITAL SPACE</div>
   <div class="hud-decoration">SYSTEM ONLINE ✦</div>
 
-  <!-- TOP BAR -->
   <header class="topbar">
     <div class="brand">
       ZY<span class="brand-qent">QENT</span><span class="brand-sparkle">✦</span>
@@ -25,9 +24,7 @@
   <main id="authView">
     <section class="auth-section">
       <div class="auth-card">
-
         <div class="logo-orb">Z</div>
-
         <div class="eyebrow">ULTIMATE DIGITAL EXPERIENCE</div>
         <h1>WELCOME TO ZYQENT</h1>
         <p class="subtitle">
@@ -35,30 +32,17 @@
           and a new interactive experience.
         </p>
 
-        <!-- LOGIN -->
         <div id="loginPanel">
           <form id="loginForm">
             <label for="email">EMAIL ADDRESS</label>
-            <input
-              type="email"
-              id="email"
-              placeholder="Enter your email"
-              autocomplete="email"
-              required
-            >
+            <input type="email" id="email" placeholder="Enter your email"
+              autocomplete="email" required>
 
             <label for="password">PASSWORD</label>
-            <input
-              type="password"
-              id="password"
-              placeholder="Enter your password"
-              autocomplete="current-password"
-              required
-            >
+            <input type="password" id="password" placeholder="Enter your password"
+              autocomplete="current-password" required>
 
-            <button type="submit" class="primary-btn">
-              SIGN IN TO ZYQENT
-            </button>
+            <button type="submit" class="primary-btn">SIGN IN TO ZYQENT</button>
           </form>
 
           <div class="auth-line"></div>
@@ -74,40 +58,22 @@
           </p>
         </div>
 
-        <!-- REGISTER -->
         <div id="registerPanel" class="hidden">
           <form id="registerForm">
             <label for="registerName">DISPLAY NAME</label>
-            <input
-              type="text"
-              id="registerName"
-              placeholder="Your name"
-              autocomplete="name"
-              required
-            >
+            <input type="text" id="registerName" placeholder="Your name"
+              autocomplete="name" required>
 
             <label for="registerEmail">EMAIL ADDRESS</label>
-            <input
-              type="email"
-              id="registerEmail"
-              placeholder="Your email"
-              autocomplete="email"
-              required
-            >
+            <input type="email" id="registerEmail" placeholder="Your email"
+              autocomplete="email" required>
 
             <label for="registerPassword">PASSWORD</label>
-            <input
-              type="password"
-              id="registerPassword"
+            <input type="password" id="registerPassword"
               placeholder="Minimum 12 characters"
-              autocomplete="new-password"
-              minlength="12"
-              required
-            >
+              autocomplete="new-password" minlength="12" required>
 
-            <button type="submit" class="primary-btn">
-              CREATE MEMBER ACCOUNT
-            </button>
+            <button type="submit" class="primary-btn">CREATE MEMBER ACCOUNT</button>
           </form>
 
           <p class="switch-text">
@@ -117,11 +83,7 @@
         </div>
 
         <div id="notice" class="notice" role="status" aria-live="polite"></div>
-
-        <div class="auth-footer">
-          SECURE DIGITAL ACCESS // ZYQENT CORE
-        </div>
-
+        <div class="auth-footer">SECURE DIGITAL ACCESS // ZYQENT CORE</div>
       </div>
     </section>
   </main>
@@ -137,12 +99,10 @@
           </div>
           <p class="dashboard-label">MEMBER SPACE</p>
         </div>
-
         <div class="account-status">MEMBER CONNECTED</div>
       </header>
 
-      <!-- NAVIGATION -->
-      <nav class="dashboard-nav">
+      <nav class="dashboard-nav" aria-label="Main navigation">
         <button class="nav-btn active" data-page="home">HOME</button>
         <button class="nav-btn" data-page="universe">UNIVERSE</button>
         <button class="nav-btn" data-page="technology">TECH CENTER</button>
@@ -154,14 +114,13 @@
       <section id="page-home" class="page-content">
         <div class="hero-panel">
           <div class="eyebrow">YOUR DIGITAL SPACE</div>
-          <h2>WELCOME, <span id="memberName">MEMBER</span></h2>
+          <h2>WELCOME, <span id="memberNameHome">MEMBER</span></h2>
           <p>
             Your journey into the ZYQENT digital universe starts here.
             Discover, explore, learn, and experience.
           </p>
         </div>
 
-        <!-- ZYQO -->
         <div class="zyqo-panel">
           <div class="zyqo-orb">
             <div class="zyqo-face">
@@ -170,15 +129,14 @@
               <span class="zyqo-mouth"></span>
             </div>
           </div>
-
           <div class="zyqo-info">
             <div class="eyebrow">ZYQENT AI COMPANION</div>
             <h3>ZYQO</h3>
             <p>
-              Your future digital companion. Ready to become part
+              Your digital companion. Ready to become part
               of your exploration in the ZYQENT universe.
             </p>
-            <span class="coming-soon">AI SYSTEM IN DEVELOPMENT</span>
+            <span class="coming-soon">COMPANION PROTOTYPE</span>
           </div>
         </div>
 
@@ -190,31 +148,26 @@
             <h3>Digital Universe</h3>
             <p>Explore your own digital space and discover new experiences.</p>
           </article>
-
           <article class="feature-card">
             <div class="feature-icon">⌘</div>
             <h3>Technology Center</h3>
             <p>Discover technology, AI, digital innovation, and creativity.</p>
           </article>
-
           <article class="feature-card">
             <div class="feature-icon">◈</div>
             <h3>Interactive World</h3>
             <p>Enter an interactive world built for exploration.</p>
           </article>
-
           <article class="feature-card">
             <div class="feature-icon">◎</div>
             <h3>Personal Space</h3>
             <p>Your personal member space within the ZYQENT ecosystem.</p>
           </article>
-
           <article class="feature-card">
             <div class="feature-icon">⟡</div>
             <h3>Experience Engine</h3>
             <p>A new way to experience digital interactions.</p>
           </article>
-
           <article class="feature-card">
             <div class="feature-icon">⌬</div>
             <h3>Digital Gateway</h3>
@@ -240,20 +193,17 @@
           <h2>DIGITAL UNIVERSE</h2>
           <p>Explore the universe of ZYQENT and discover new digital dimensions.</p>
         </div>
-
         <div class="feature-grid">
           <article class="feature-card">
             <h3>Galaxy Map</h3>
             <p>Discover the future digital map of ZYQENT.</p>
             <span class="coming-soon">COMING SOON</span>
           </article>
-
           <article class="feature-card">
             <h3>Dimensional Gateway</h3>
             <p>Discover portals to different digital experiences.</p>
             <span class="coming-soon">COMING SOON</span>
           </article>
-
           <article class="feature-card">
             <h3>Personal Digital Space</h3>
             <p>A space that will grow with your experience.</p>
@@ -269,20 +219,17 @@
           <h2>TECHNOLOGY CENTER</h2>
           <p>Technology, AI, creativity, and digital innovation.</p>
         </div>
-
         <div class="feature-grid">
           <article class="feature-card">
             <h3>Artificial Intelligence</h3>
             <p>Discover AI technology and intelligent digital systems.</p>
             <span class="coming-soon">COMING SOON</span>
           </article>
-
           <article class="feature-card">
             <h3>Creative Studio</h3>
             <p>Explore digital creativity, design, and visual experiences.</p>
             <span class="coming-soon">COMING SOON</span>
           </article>
-
           <article class="feature-card">
             <h3>Live System</h3>
             <p>Future system monitor and digital activity center.</p>
@@ -298,20 +245,17 @@
           <h2>INTERACTIVE WORLD</h2>
           <p>Entertainment, learning, discovery, and interactive experiences.</p>
         </div>
-
         <div class="feature-grid">
           <article class="feature-card">
             <h3>Explore</h3>
             <p>Explore new ideas and digital destinations.</p>
             <span class="coming-soon">COMING SOON</span>
           </article>
-
           <article class="feature-card">
             <h3>Learning Space</h3>
             <p>Discover a new interactive way to learn.</p>
             <span class="coming-soon">COMING SOON</span>
           </article>
-
           <article class="feature-card">
             <h3>Entertainment</h3>
             <p>Experience entertainment inside the digital ecosystem.</p>
@@ -325,13 +269,11 @@
         <div class="hero-panel profile-panel">
           <div class="eyebrow">MEMBER IDENTITY</div>
           <h2>YOUR PROFILE</h2>
-
           <div class="profile-info">
             <div class="profile-avatar">Z</div>
-            <h3 id="memberName">MEMBER</h3>
+            <h3 id="memberNameProfile">MEMBER</h3>
             <p id="profileEmail"></p>
           </div>
-
           <button type="button" id="logoutButton" class="secondary-btn">
             SIGN OUT
           </button>
@@ -348,9 +290,59 @@
         </p>
         <p class="copyright">© 2026 ZYQENT. ALL RIGHTS RESERVED.</p>
       </footer>
-
     </section>
   </main>
+
+  <!-- ZYQO FLOATING COMPANION -->
+  <div id="zyqoCompanion" class="zyqo-companion hidden">
+    <button type="button" id="zyqoToggle" class="zyqo-toggle"
+      aria-label="Open ZYQO assistant" aria-expanded="false">
+      <span class="zyqo-toggle-orb">
+        <span class="zyqo-toggle-eyes"><i></i><i></i></span>
+        <span class="zyqo-toggle-mouth"></span>
+      </span>
+      <span class="zyqo-toggle-label">ZYQO</span>
+      <span class="zyqo-online-dot"></span>
+    </button>
+
+    <section id="zyqoPanel" class="zyqo-chat-panel hidden"
+      aria-label="ZYQO assistant chat">
+      <header class="zyqo-chat-header">
+        <div class="zyqo-chat-identity">
+          <div class="zyqo-mini-avatar">
+            <span> Z </span>
+          </div>
+          <div>
+            <h3>ZYQO</h3>
+            <p><span class="zyqo-status-dot"></span> DIGITAL COMPANION</p>
+          </div>
+        </div>
+        <button type="button" id="zyqoClose" class="zyqo-close"
+          aria-label="Close ZYQO">×</button>
+      </header>
+
+      <div id="zyqoChat" class="zyqo-chat-messages" aria-live="polite">
+        <div class="zyqo-message bot-message">
+          <span class="message-tag">ZYQO</span>
+          <p>Halo! Aku ZYQO, companion digital ZYQENT. Ada yang ingin kamu jelajahi?</p>
+        </div>
+      </div>
+
+      <div class="zyqo-quick-actions">
+        <button type="button" data-zyqo="explore">Explore</button>
+        <button type="button" data-zyqo="technology">Technology</button>
+        <button type="button" data-zyqo="about">About ZYQENT</button>
+      </div>
+
+      <form id="zyqoForm" class="zyqo-chat-form">
+        <input id="zyqoInput" type="text" maxlength="300"
+          placeholder="Message ZYQO..." autocomplete="off"
+          aria-label="Message ZYQO">
+        <button type="submit" aria-label="Send message">➤</button>
+      </form>
+      <div class="zyqo-chat-footer">ZYQENT COMPANION // PROTOTYPE</div>
+    </section>
+  </div>
 
   <script src="config.js"></script>
   <script src="app.js"></script>
